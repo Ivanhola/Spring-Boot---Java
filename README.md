@@ -1,2 +1,2 @@
-# Spring-Boot---Java
-Getting Started with Spring Boot for Java
+# Learning Spring Framework
+This repo is used to house learning projects I create while learning the Java Spring Framework
