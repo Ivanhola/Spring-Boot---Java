@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <!-- Define your beans here -->
+    <bean id="myCoach"
+        class="com.ivanllamas.TrackCoach">
+    <!-- define the constructor injection (inject the depency into the constructor, taking the myFortune bean and
+        passing that object into the constructor of BaseBallCoach) -->
+            <constructor-arg ref="myFortune"/>
+            
+              <!-- What Spring is doing in the background for the above: 
+    
+                        TrackCoach myCoach = new TrackCoach(myFortune)
+              -->
+    </bean>
+    
+    
+    
+    <bean id="myFortune"
+            class="com.ivanllamas.HappyFortuneService">
+    </bean>
+    
+    
+    
+    <bean id="myCricketCoach"
+            class="com.ivanllamas.CricketCoach">
+        <!-- Set up injector property-->
+        <property name="fortuneService" ref="myFortune"/>
+        
+        <!--What spring is doing behind the scenes 
+                CricketCoach myCricketCoach = new CricketCoach();
+                myCricketCoach.setFortuneService(myFortune);
+        -->
+        
+    </bean>
+    
+    
+    
+
+  
+
+</beans>
+
+
+
+
+
