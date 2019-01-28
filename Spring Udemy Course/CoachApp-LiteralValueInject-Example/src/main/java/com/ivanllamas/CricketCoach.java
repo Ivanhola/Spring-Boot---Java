@@ -2,6 +2,8 @@
 package com.ivanllamas;
 
 
+
+
 public class CricketCoach implements Coach {
     
     //add new fields for our values
@@ -33,6 +35,7 @@ public class CricketCoach implements Coach {
     
     //Step 1. Create Setter method for injection
     public void setFortuneService(FortuneService fortuneService) {
+       
         System.out.println("The setter method in CricketCoach was used! - setFortuneService");
         this.fortuneService = fortuneService;
     }
