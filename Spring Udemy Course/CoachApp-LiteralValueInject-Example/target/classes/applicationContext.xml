@@ -7,8 +7,12 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
-    <!-- Define your beans here -->
+    <!-- LOAD A FILE (sport.properties) -->
+    
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
+    
+                            <!-- Define your beans here -->
     <bean id="myCoach"
         class="com.ivanllamas.TrackCoach">
     <!-- define the constructor injection (inject the depency into the constructor, taking the myFortune bean and
@@ -22,25 +26,33 @@
     </bean>
     
     
-    
+                     <!-- myFortune Object (bean) -->
     <bean id="myFortune"
             class="com.ivanllamas.HappyFortuneService">
     </bean>
     
     
-    
+                             <!-- myCricketCoach Object (bean) -->
     <bean id="myCricketCoach"
             class="com.ivanllamas.CricketCoach">
         <!-- Set up injector property-->
         <property name="fortuneService" ref="myFortune"/> 
+        
         <!--What spring is doing behind the scenes 
                 CricketCoach myCricketCoach = new CricketCoach();
                 myCricketCoach.setFortuneService(myFortune);
         -->
         
-        <!-- Set up literal values-->
+         <!-- Set up literal values Reading from properties file instead of hard coding like the old version -->
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="teamName" value="${foo.team}"/>
+        
+       
+        <!-- Set up literal values *OLD VERSION
         <property name="emailAddress" value="test@gmail.com"/>
         <property name="teamName" value="Team Rocket"/>
+        
+        -->
         
         <!--What spring is doing behind the scenes 
                 CricketCoach myCricketCoach = new CricketCoach();
