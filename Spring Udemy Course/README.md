@@ -46,5 +46,7 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring Configuration - @Bean (Manually adding beans to our config java class)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-ConfigurationBeansWIthJava): This program demonstrates how to manually add beans to our _SportConfig._java class, by using Java code instead of scanning with __@Component__ Annotation. Why would we manually input beans instead of automatically scanning for them? Sometimes automatic configuration is not an option. __When?__ Let's imagine that you want to wire components from 3rd-party libraries (you don't have the source code so you can't annotate its classes with @Component), so automatic configuration is not possible.
 
+- [Spring Configuration - @PropertySource("classpath:file.name") (Injecting values from a file using Annotation and Java code, no XML file.)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-ConfiguratioInjectingValuesFile): This program demonstrates how to inject values into variables using the __@PropertySource__ & __@Value__ annotation, added a Change log to further facilitate the changes made for each program from here on out.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
