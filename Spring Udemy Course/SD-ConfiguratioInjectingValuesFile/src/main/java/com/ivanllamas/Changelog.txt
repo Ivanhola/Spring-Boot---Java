@@ -1,0 +1,13 @@
+## In this Program we will create a properties file named: sport.properties
+
+## We will load the properties file in our SportConfig.java class, and add 
+    @PropertySource("classpath:sport.properties")
+
+## We will go to our swimcoach class and define 2 variables and inject them with
+    @Value annotation to inject the values from the properties file
+
+## We will run the example in SwimJavaConfigDemo.java main class
+    adding System.out.println to print out getters from the variables we created
+
+## Changed Coach to SwimCoach in SwimJavaConfigDemo.java, run the program from
+Swim Java ConfigDemo.Java for example & output.
