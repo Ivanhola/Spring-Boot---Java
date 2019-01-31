@@ -42,5 +42,7 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring Annotations - @PostConstruct & @PreDestroy (Bean Lifecycle)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-AnnotationBeanLifecycle): This program demonstrates the @PostConstructor and @PreDestroy Annotations, and the usage by adding initialize and destroy methods to our beans to perform during its lifecycle.
 
+- [Spring Configuration - @Configuration & @ComponentScan("packageName")(No XML File used to create a Spring Container for storing beans)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-ConfigurationNoXML): This program demonstrates the @Configuration and @ComponentScan() usage, and how to configure beans in a Spring Container without the use of an external XML file.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
