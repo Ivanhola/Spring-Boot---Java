@@ -38,5 +38,9 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring Annotations - @Value (Injecting literal values from a file)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-AnnotationFileValueInjection): This program demonstrates how to read values from a properties file, and inject them onto our class variables by using the @Value annotation. (This allows us to change the value of variables from a config value, instead of hard coding it in the program) 
 
+- [Spring Annotations - @Scope (Defining bean scope using Annotations)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-AnnotationBeanScope): This program demonstrates the @Scope Annotation, which will define a beans scope when used (By Default singleton)
+
+- [Spring Annotations - @PostConstruct & @PreDestroy (Bean Lifecycle)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-AnnotationBeanLifecycle): This program demonstrates the @PostConstructor and @PreDestroy Annotations, and the usage by adding initialize and destroy methods to our beans to perform during its lifecycle.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
