@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>HelloWorld - Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- This is our form for our /showForm web request. User will enter a text, and submit it as
+        a GET request, when submit is hit, it will try to send data to the 'processForm' path-->
+        
+        <form action="processForm"  method="GET">
+            
+            <input type="text" name="studentName"
+                   placeholder="What's your name?"/>
+            
+            <input type="submit" />
+            
+            <!-- SINCE WE ARE NOT USING JSP, WE WILL NEED TO FIGURE OUR AN ALTERNATIVE WAY TO PASS
+            studetnName to our helloworld.html-->
+            
+        </form>
+    </body>
+</html>

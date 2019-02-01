@@ -1,0 +1,11 @@
+## We Will create a HelloWorldController Class
+
+## Once we create our HelloWorldController, we are going to annotate it with @Controller to tell spring it is
+   an MVC Controller
+
+## We will then implement 2 Controller methods and annotate them with @RequestMapping to tell spring that 
+   when the URL "/showForm" is requested, it handle that request and direct it to whatever our methods return value is
+   "helloworld-form".html
+
+## We will need to create the HTML files to display the view, in resources/templates/ we will add 2 files: helloworld-form.html
+   & helloworld.html
