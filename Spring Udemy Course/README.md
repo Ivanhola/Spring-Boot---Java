@@ -48,5 +48,6 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring Configuration - @PropertySource("classpath:file.name") (Injecting values from a file using Annotation and Java code, no XML file.)](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SD-ConfiguratioInjectingValuesFile): This program demonstrates how to inject values into variables using the __@PropertySource__ & __@Value__ annotation, added a Change log to further facilitate the changes made for each program from here on out.
 
+- [Spring MVC - Simple Spring app running an HTML using @RequestMapping](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo): This program demonstrates a very basic example of how to use __@RequesMapping__ and map a web page to a method in a @Controller Class (When it hits that controller, it will call the method/redirect to a webpage)
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
