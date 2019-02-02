@@ -9,3 +9,6 @@
 
 ## We will need to create the HTML files to display the view, in resources/templates/ we will add 2 files: helloworld-form.html
    & helloworld.html
+
+## Using th:text="${param.studentName}" we can pass the studentName parameter to our helloworld.html
+
