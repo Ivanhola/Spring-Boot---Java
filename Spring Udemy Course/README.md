@@ -52,4 +52,6 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring MVC - Simple form data page with Thymeleaf](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo-FormData): This program demonstrates a very basic program that will map 2 URLS __/showForm__ & __processForm__ and pass form data from /showForm to /processForm & display it using Thymeleaf parameters.
 
+- [Spring MVC - Adding data to our Model using a controller method](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo-AddDataToModel): This program demonstrates and example on how to _add_ data from an HTML form to our __Model__,_read & modify_ the data, and display it on our __View__ (read data from our controller and display it to our HTML page).
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
