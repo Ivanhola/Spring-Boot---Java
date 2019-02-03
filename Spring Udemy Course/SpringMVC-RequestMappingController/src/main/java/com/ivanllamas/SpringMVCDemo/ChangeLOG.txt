@@ -1,0 +1,23 @@
+## This program is going to demonstrate using @RequestMapping on a controller level.
+When using @RequestMapping on a controller, all other mappings on controller methods are relative to the Controller level
+For example: if we had a controller mapped to /SectionOne, and a method mapped to /testForm
+the testForm url would be /SectionOne/testForm
+
+## We will create a new controller 'DittoController.java' and that 
+ class will have the same controller mapping as 'HomeController.java', 
+since both classes will have the same mapping, we will see what happens, if there are any issues
+and how we can get around it.
+
+## When we run the program and 2 controllers have the same mapping you get an error:
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'helloWorldController' method 
+public java.lang.String com.ivanllamas.SpringMVCDemo.HelloWorldController.showForm()
+to { /showForm}: There is already 'dittoController' bean method
+
+## To resolve this problem, we will add a 'parent' mapping at the top (Add @RequestMapping at the Controller Level)
+of our HelloWorldController.java class "@RequestMapping("/hello")".
+Now the mapping will be relative to the Controller. If there are 2 controllers that have a /showForm path, 
+we can use /hello/showForm to tell Spring to look for the /showForm on the /hello controller.
+
+## Keep in mind we will have to change any directory that only used /showForm before, and modify it to show our new path
+at /hello/showForm (our main-menu.html will be modified to redirect to /hello/showForm now)
