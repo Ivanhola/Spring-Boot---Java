@@ -56,6 +56,7 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring MVC - @RequestParam Example and Usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo-RequestParamExample): This program demonstrates the usage of __@RequestParam__ which takes form data from a request and bind it to a variable, instead of using __HttpServletRequest__
 
+- [Spring MVC - Using @RequestMapping at a controller level](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-RequestMappingController): This program demonstrates the usage of --__@RequestMapping__ on a _controller_  level vs on a _controller method_, and when to use it on a controller. Each controller method has mappings, and adding __@RequestMapping__ on a controller sets the mapping locations relative to the __@Controller @RequestMapping__ path (Example: /ControllerMappingPath/ControllerMethodMappingPath) .
 
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
