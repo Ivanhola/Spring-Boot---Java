@@ -1,15 +1,15 @@
 ## In this project we will create a new method with
 @RequestMapping() called  public String readFormData(HttpServletRequest request, Model model)
  in our HelloWorldController.java class to process form data. This method will take in an HttpServletRequest(form data)
- and the model will be emtpy until we add things to it (using addAttribute)
+ and the model will be empty until we add things to it (using addAttribute)
 
-## We will then read the form data: "studenName"
+## We will then read the form data: "studenName" from helloworld-form.html 
 
 ## Convert the name to upper CASE using java code
 
 ## Add the result to the model using .addAttribute("attrName", value);
 
-## Go to helloworld.html and modify the parameter to match that of the attribute name "attrName";
+## Go to helloworld.html and modify/add the parameter to match that of the attribute name "attrName";
 
 ## Make sure to change the mapping on helloworld-form.html instead of action="processForm" to our updated "processFormVersionTwo"
 
