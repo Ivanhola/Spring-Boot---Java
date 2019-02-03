@@ -1,0 +1,10 @@
+## This Program will demonstrate the usage of @RequestParam to grab a pramater
+from an html form instead of using HttpRequestServlet.
+
+## We will go to our HelloWorldController.java and create a new method that will be mapped to
+/processFormVersionThree
+
+## We can get rid of String studentName = request.getParameter("studentName"); in the method, since we binded it
+in the method parameters using @RequestParam
+
+## Change the action="processFormVersionTwo" to the latest version in helloworld-form.html
