@@ -54,4 +54,8 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring MVC - Adding data to our Model using a controller method](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo-AddDataToModel): This program demonstrates and example on how to _add_ data from an HTML form to our __Model__,_read & modify_ the data, and display it on our __View__ (read data from our controller and display it to our HTML page).
 
+- [Spring MVC - @RequestParam Example and Usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVCDemo-RequestParamExample): This program demonstrates the usage of __@RequestParam__ which takes form data from a request and bind it to a variable, instead of using __HttpServletRequest__
+
+
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
