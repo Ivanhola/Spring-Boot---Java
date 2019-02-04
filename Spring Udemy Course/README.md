@@ -58,5 +58,7 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring MVC - Using @RequestMapping at a controller level](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-RequestMappingController): This program demonstrates the usage of --__@RequestMapping__ on a _controller_  level vs on a _controller method_, and when to use it on a controller. Each controller method has mappings, and adding __@RequestMapping__ on a controller sets the mapping locations relative to the __@Controller @RequestMapping__ path (Example: /ControllerMappingPath/ControllerMethodMappingPath) .
 
+- [Spring MVC - Using Form tags, TextField example. Binding object data to a model and using @ModelAttribute to retrieve data and display it to our view](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-FormTagApp): This program demonstrates how to create a model attribute using an Object, and how to set data to that object type in an HTML page, and how to retrieve it using __@ModelAttribute__ in our controller methods, which binds the data to the same Object type, which allows us to read the data in another view page.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
