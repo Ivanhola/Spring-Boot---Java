@@ -1,0 +1,21 @@
+## This project will demonstrate the usage of Spring MVC Form Tags, @ModelAttribute, and storing form data into a 
+model attribute, then retrieving that data from the model attribute we created. Display it to our view page.
+
+## We will need to create a student class. Student.java, our student will have 2 variables for
+first name, last name. with a no arg default constructor and getters and setters for our variables.
+
+## We will need to create a controller class for our student, StudentController.java and map the controller to 
+/student
+
+## create a method in the controller to handle the requests to /student/showForm
+
+## Inside the method we are going to create a Student object, and add that Student object to our model attribute with
+the name "studentObj"
+
+## We are going to create a new html view called - studentForm.html where we will take our studentObj attribute that we 
+created in our StudentController method. and set data to the variables for our studentObj object.
+
+## We will then create another method that will read data from the studentObj attribute, and bind it to a Student Object
+using @ModelAttribute("name of attribute" Object objectvariable), we will then redirect to studentConfirmation 
+where we will then read the data created and saved to our studentObj attribute.
+
