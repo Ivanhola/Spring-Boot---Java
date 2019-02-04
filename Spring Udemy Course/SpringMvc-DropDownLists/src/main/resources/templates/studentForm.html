@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Student form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    
+    <body>
+        <!-- This form will create a Student object, calling form our model attribute we added
+        and named "studentObj", we will then bind the data to our objects variables firstName, lastName-->
+        
+        
+        <!-- When the form is called, it will call our getters from each variable field-->
+        <form action="#" th:action="@{processForm}" th:object="${studentObj}" > 
+            
+            First name: <input type="text" th:field="*{firstName}"/>
+            <br/>
+            <br/>
+            
+            Last name: <input type="text" th:field="*{lastName}"/>
+            <br/>
+            <br/>
+            
+            <!-- Hard coded version.
+            Country: <select th:field="*{Country}">
+                <option th:value="Brazil" th:text="Brazil"></option>
+                <option th:value="France" th:text="France"></option>
+                <option th:value="Germany" th:text="Germany"></option>
+            </select>
+                
+             -->
+            
+             <!-- Looping through our hashmap from our 'studentObj' model, and assigning the data
+             to 'Country' variable.
+             -->
+              Country: <select th:field="*{Country}">
+               <option th:each="countries : ${studentObj.countryOptions}" th:value="${countries.key}"
+                       th:text="${countries.value}"></option>
+            </select>
+              
+              
+            <input type="submit"/>
+            
+        </form>
+        <!-- When the form is submitted it will call the setters and set each variable to whatever is input-->
+       
+        
+    </body>
+    
+    
+    
+</html>

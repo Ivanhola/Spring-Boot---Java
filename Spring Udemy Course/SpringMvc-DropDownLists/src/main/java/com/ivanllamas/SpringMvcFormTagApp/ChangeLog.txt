@@ -1,0 +1,39 @@
+## This project will demonstrate how to make drop-down lists using a model to pass data between controllers/methods
+from 1 html page to another
+
+## Step 1. Update our HTML student form and add a drop down lists.
+We will use our Country variable to store the option ( we don't have a country variable so we must update our student class
+to include a Country variable)
+
+## Step 2. Update our Student class to include a Country variable. Add getters and setters (When the form is loaded
+it will perform the getters, and when it is submitted it will perform the setters.)
+
+## Step 3. Updating our Confirmation page. We now have data in our model attribute 'studentObj' but we can't read it
+yet because our confirmation page has no HTML element to read it yet. Go to our studentConfirmation.html
+and add a studentObj.Country to display our country variable value.
+
+## Step 4. What if we wanted to read from the Java class instead of manually adding options in the html page?
+
+## Step 5. Create a linkedhashmap and populate it with key-value for our country list. Create a getter so spring can read
+the list collection
+
+## Step 6. add a foreach loop in our HTML to iterate through our hashmap, and assign key/values to each option through each
+iteration
+
+
+
+Special notes:
+th:action="@{processForm}" = this is where our form will redirect when the form is submitted
+
+th:object="${studentObj}" = this is the object for the 'model attribute' we create in our controller, and we can store/read
+data by referencing the name of this attribute.
+
+th:field="*{Country}" this is the path to our variable in our object.
+
+th:value="Brazil" = this is our value for our variable
+
+th:text="Brazil" = this is what we see (aka the label) for our value
+
+th:each="countries : ${studentObj.countryOptions}" = foreach (countries in Student.countryOptions) we MUST reference
+the student object when we want to check the map value 'studentObj.countryOptions' refers to the map in our 
+'studentObj' attribute from our model
