@@ -1,0 +1,31 @@
+## In this program we will make usage of the bean validation by hibernate, to validate some user input in our Customer.java
+class
+
+## Step 1. We will need to create our customer class that will take in a first name and a last name.
+
+## Step 2. We will need to add validator annotations to our last name, to make sure that it is not null, and that it has
+a value of at least 1 character.
+
+## Step 3. We need to add an html page for our form, that has error validation checks. In thymeleaf we can use an if statement
+to check if there is an error in the fields, and use th:errors to assign the error check to a variable
+
+## Step 4. Create CustomerController, to handle our form process and validation check. Create a /showForm method to 
+add a model attribute with a customer Object to our HTML form, create a /processForm method to validate and process the customer
+information.
+
+## Step 5. @Valid will validate our customerObj object, and check if there are any errors, and bind the error results to 
+BindingResult. If the BindingResult finds any errors, it will return the user back to the form, along with displaying the form
+error by using th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+
+## Step 6. Display our customer in the Confirmation page HTML file.
+
+
+## This code works perfectly, except 1 problem... when entering white space and nothing else, the program will
+pass the validation check, and although there is no last name entered, it will still pass the check.
+WE WILL FIX THIS IN FUTURE PROGRAM
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
