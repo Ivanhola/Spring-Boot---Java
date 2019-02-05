@@ -1,0 +1,32 @@
+## This program will demonstrate the usage of Checkboxes in our Spring MVC form tags. Unlike radio boxes, and Dropdown
+lists, the checkboxes can have MULTIPLE choices that a person can choose, therefore your variable must be able
+to take multiple choices for answers (an Array of Strings) must add appropriate getters and setters for our variable
+
+## Step 1. Update our Student Form to add Check box input
+
+## Step 2. Add an array variable to store our check box input values in Student.java
+
+## Step 3. Update our studentConfirmation.html page to iterate through our array, and add a list element for each 
+String object in our array.
+
+
+
+
+
+
+
+Special notes:
+th:action="@{processForm}" = this is where our form will redirect when the form is submitted
+
+th:object="${studentObj}" = this is the object for the 'model attribute' we create in our controller, and we can store/read
+data by referencing the name of this attribute.
+
+th:field="*{Country}" this is the path to our variable in our object.
+
+th:value="Brazil" = this is our value for our variable
+
+th:text="Brazil" = this is what we see (aka the label) for our value
+
+th:each="countries : ${studentObj.countryOptions}" = foreach (countries in Student.countryOptions) we MUST reference
+the student object when we want to check the map value 'studentObj.countryOptions' refers to the map in our 
+'studentObj' attribute from our model
