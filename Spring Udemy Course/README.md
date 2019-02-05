@@ -65,5 +65,7 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 - [Spring MVC - Added Radio Buttons form tag example. Reading data from radio buttons and adding to our model](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-RadioButtons):
 This program demonstrates the Radio Button form tag. How to create radio buttons and add data from the HTML radio button & bind it to our model "studentObj" attribute. We can then read it on our Confirmation page.
 
+- [Spring MVC - Added Check box form tag example. Storing check box data into an array in our Student object.](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-CheckBox): This program demonstrates the usage of check box form tags. Check boxes can be used for multiple choices, and we would need an array variable to store multiple answers, we create an array and store the user input data into the array, and read it in our view.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
