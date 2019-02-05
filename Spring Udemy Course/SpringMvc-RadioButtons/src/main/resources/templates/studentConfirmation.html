@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Student Confirmation Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        Student Confirmed: <span th:text="${studentObj.firstName + ' ' + studentObj.lastName}" /> 
+        
+        <br/>
+        
+        Country: <span th:text="${studentObj.Country}"/>
+            
+            <br/>
+            
+        Favorite Language: <span th:text="${studentObj.favoriteLanguage}"/>
+    </body>
+</html>

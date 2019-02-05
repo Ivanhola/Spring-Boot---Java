@@ -1,0 +1,31 @@
+## This program will demonstrate the form tag usage of Radio buttons in spring MVC
+
+## We will need to create a variable in our Student class: favoriteLanguage, to store the data from the radio buttons.
+create getters and setters for our variable
+
+## We will need to add inputs to our StudentForm.html for radio buttons, and use ${'StringValue'} and add that data 
+to a variable in our Student Object. (favoriteLanguage)
+
+
+## read the data in studentConfirmation.html by using th:text="${studentObj.favoriteLanguage}"
+
+
+
+
+
+
+Special notes:
+th:action="@{processForm}" = this is where our form will redirect when the form is submitted
+
+th:object="${studentObj}" = this is the object for the 'model attribute' we create in our controller, and we can store/read
+data by referencing the name of this attribute.
+
+th:field="*{Country}" this is the path to our variable in our object.
+
+th:value="Brazil" = this is our value for our variable
+
+th:text="Brazil" = this is what we see (aka the label) for our value
+
+th:each="countries : ${studentObj.countryOptions}" = foreach (countries in Student.countryOptions) we MUST reference
+the student object when we want to check the map value 'studentObj.countryOptions' refers to the map in our 
+'studentObj' attribute from our model
