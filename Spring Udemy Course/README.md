@@ -62,5 +62,8 @@ Here you will find a list of projects that contain Demos to core concepts, as we
 
 - [Spring MVC - Added drop down list form tag, reading from a HashMap in our HTML file. displaying Countries from the hashmap](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-DropDownLists): This program demonstrates how to create a drop down list form tag, and assign data from the drop down list to a variable in our object. Also demonstrates reading from a hashmap list, and assigning data from the hashmap to the variable, and displaying it on our view template.
 
+- [Spring MVC - Added Radio Buttons form tag example. Reading data from radio buttons and adding to our model](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-RadioButtons):
+This program demonstrates the Radio Button form tag. How to create radio buttons and add data from the HTML radio button & bind it to our model "studentObj" attribute. We can then read it on our Confirmation page.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
