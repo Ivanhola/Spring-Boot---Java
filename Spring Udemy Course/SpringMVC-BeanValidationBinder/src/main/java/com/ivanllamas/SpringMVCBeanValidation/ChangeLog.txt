@@ -1,0 +1,14 @@
+##This program picks off from /BeanValidation See for more information
+
+## Step 7. Add support for the @InitBinder and StringTrimmerEditor in CustomerController.java
+
+## Step 8. Create a method that will implement the @InitBinder annotation note: InitBinder methods will always use
+WebDataBinder to bind data from the web request to the method. Whenever a request to that controller is called, 
+it will run the InitBinder method, and perform things before it goes to the controller methods (a pre-processor)
+
+
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
