@@ -69,5 +69,7 @@ This program demonstrates the Radio Button form tag. How to create radio buttons
 
 - [Spring MVC - Hibernate Bean Validator Example & Usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-BeanValidation): This program demonstrates how to use form validation by checking if user input is NotNull, or the amount of characters is >=1. Introduces __@Valid__ annotation and __BindingResult__ into our controller method argument. Also demonstrates how to use thymeleaf to validate the errors based on the validation checks.
 
+- [Spring MVC - Bean Validator V2 Picking up from our previous example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-BeanValidationBinder): This program picks up from our [Previous](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-BeanValidation)
+project. In this project we introduce the use of __@InitBinder__ to pre-process data from our controller, and we use it to trim whitespace for our validation program.
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
