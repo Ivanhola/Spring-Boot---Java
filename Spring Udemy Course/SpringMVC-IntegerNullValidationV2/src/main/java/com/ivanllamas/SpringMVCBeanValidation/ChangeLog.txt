@@ -1,0 +1,37 @@
+## This is part 2 of https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-IntegerNullValidation
+In the last program we change the variable 'freePasses' from an int to an Integer, which allows us to add @NotNull
+to the variable, however when inputing String values, you will get an error message.
+
+This version demonstrates how to add a custom error message to fit the error thrown by a user entering a String value
+for our Integer variable.
+
+## Step 1. We will create a custom error message in resources/errorMessages.properties
+
+## Step 2. Add our custom error message with the name typeMismatch.customerObj.freePasses=value
+the type of error, the Class where its from (or object attribute from the model) and the variable
+
+## Step 3. Tell spring to read our file by creating a 2 beans in our @Configuration Java class 
+(since we have no @Configuration we create the beans in our main program SpringMvcValidationApplication.java
+since @SpringBootApplication uses @Configuration automatically for us.)
+
+
+## Step 4. Spring will override the typeMismatch error with our custom error message thanks to the 2 beans we created
+in our configuration class.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'

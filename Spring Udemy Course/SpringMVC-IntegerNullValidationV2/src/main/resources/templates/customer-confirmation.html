@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer Confirmed</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        Customer confirmed: <span th:text="${customerObj.firstName + ' ' + customerObj.lastName}" />
+        
+        <br/>
+        
+        
+        Free passes for this customer: <span th:text="${customerObj.freePasses}" />
+        
+        <br/>
+        
+        The customers Postal Code: <span th:text="${customerObj.postalCode}"/>
+        
+        
+    </body>
+</html>

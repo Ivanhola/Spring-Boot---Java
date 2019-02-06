@@ -1,0 +1,14 @@
+
+package com.ivanllamas.SpringMVCBeanValidation;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainMenuController {
+
+    @RequestMapping("/")
+    public String mainMenuPage(){
+     return "main-menu";
+    }
+}
