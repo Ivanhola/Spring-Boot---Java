@@ -77,5 +77,7 @@ project. In this project we introduce the use of __@InitBinder__ to pre-process 
 - [Spring MVC - Regular Expression Validation, Using regex to validate a postal code field in our form](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-RegexValidation): This program demonstrates the __@Pattern(regexp)__ annotation to validate our variable in Customer.java by using regular expressions.
 
 - [Spring MVC - Simple change to adding a @NotNull annotation to our int variable](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-IntegerNullValidation): This program demonstrates how to add the __@NotNull__ annotation to an int variable.
+__PART 2__[Spring MVC - Adding beans to override the error message when inputing String values, reading from a properties file]().
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
