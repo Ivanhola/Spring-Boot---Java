@@ -1,0 +1,34 @@
+## This program will demonstrate how to add regex bean validation to our Customer.java class. Using regular experssions
+we can add customized Patterns that the user has to follow when inputting information to a given form/input
+
+## Step 1. Just like our previous Validation programs, We will need to go to our Customer.java class, and add a variable
+that will apply our Validation rules, in this case we create a String variable and name it 'postalCode' and generate
+getters/setters
+
+## Step 2. Add validation rule to our postalCode variable, using Regex we are going to add a @Pattern annotation
+with a regex that acceps 5 character/digit combination
+
+## Step 3. Update HTML form customer-form.html to display errors if any are caught by the validation check
+
+## Step 4. Update our confirmation page to display the postal code that the user entered (assuming it passed the check)
+
+Note: remember, the CustomerController.java has a @Valid and BindingResult to check if there are any validation errors
+so we do not need to change anything as ANY error will throw an exception and return the user to the form
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
