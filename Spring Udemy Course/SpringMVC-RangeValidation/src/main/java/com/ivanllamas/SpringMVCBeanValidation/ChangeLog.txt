@@ -1,0 +1,27 @@
+## This program will demonstrate how to add range validation to our customer class, expanding on more examples of
+bean validation using @Min & @Max
+
+## Step 1. create a variable for our validation in Customer.java
+private int freePasses;
+
+## Step 2. create getters and setters for our variable.
+
+## Step 3. add validation for our variable using @Min and @Max
+
+## Step 4. add error message to display on our HTML form customer-form.html
+
+## Step 5. performing the validation in our CustomerController.java (our code already reads the @Valid for our model
+attribute 'customerObj' so if there are any errors, it will redirect to the form, our customercontroller is good as is)
+
+## Step 6. Updating our confirmaion page to show the new results. customer-confirmation.html
+
+
+
+
+
+ 
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
