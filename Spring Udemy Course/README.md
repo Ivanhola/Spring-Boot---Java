@@ -72,4 +72,6 @@ This program demonstrates the Radio Button form tag. How to create radio buttons
 - [Spring MVC - Bean Validator V2 Picking up from our previous example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-BeanValidationBinder): This program picks up from our [Previous](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-BeanValidation)
 project. In this project we introduce the use of __@InitBinder__ to pre-process data from our controller, and we use it to trim whitespace for our validation program.
 
+- [Spring MVC - Number Range Validation validating that a form has a value between 0-10](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-RangeValidation): This program demonstrates __@Min__ and __@Max__ annotation usage, for validating that a variable in a form is between numbers 0-10, and displaying the appropriate error message if an value is greater or less than the set _min_ & _max_.
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
