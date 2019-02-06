@@ -1,0 +1,38 @@
+## This program is expanding on our current state of the program : https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-RegexValidation
+We want to make it so our 'freePasses' variable cannot be null when submitting the Customer form,
+In order to do that we will need to make the variable @NotNull so that the field is required
+
+## Step 1. add @NotNull to our freePasses variable
+
+## Step 2. Run the program and check if an error message is shown when the user doesn't enter a value
+
+## When running the program we get an error: 
+Failed to convert property value of type java.lang.String to required type int for property freePasses; nested exception is java.lang.NumberFormatException: For input string: "" 
+--The root cause was that it failed to convert a String -> int 
+
+## Step 3. In order to resolve this issue, we need to refactor our int variable and change it to int->Integer
+
+How does this work? If our field is empty or has whitespace, it will be trimmed to null thanks to our StringTrimmerEditor
+that we implemented in our initBinding
+
+Integer is a wrapper class in java
+
+## Step 4. Update our getters/setters for our Integer type variable
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
