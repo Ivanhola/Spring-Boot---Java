@@ -79,5 +79,7 @@ project. In this project we introduce the use of __@InitBinder__ to pre-process 
 - [Spring MVC - Simple change to adding a @NotNull annotation to our int variable](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-IntegerNullValidation): This program demonstrates how to add the __@NotNull__ annotation to an int variable.
 __PART 2__[Spring MVC - Adding beans to override the error message when inputing String values, reading from a properties file](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-IntegerNullValidationV2).
 
+- [Spring MVC - Custom Validation & Custom Annotation example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-CustomValidationAnnotation): This program demonstrates how to create your own Custom annotation, and using it to create your own Validation rules for the annotation. Uses __ConstraintValidator__ interface to set our own validation rules
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
