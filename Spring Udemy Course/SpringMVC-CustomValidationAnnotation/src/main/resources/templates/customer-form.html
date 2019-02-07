@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Customer registration form!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/mainMenuCSS.css" th:href="@{/css/mainMenuCSS.css}" rel="stylesheet"/>
+    </head>
+    <body>
+        
+        
+        <form action="#" th:action="@{processForm}" th:object="${customerObj}" > 
+            Fill out the form. Asterisks(*) are required input fields.
+            <br/>
+            
+            First name: <input type="text" th:field="*{firstName}"/>
+            
+            <br/>
+            <br/>
+            <!-- Our first Project on validation - (Spring MVC - Hibernate Bean Validator Example & Usage) -->
+            Last name(*): <input type="text" th:field="*{lastName}"/>
+            <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error" ></span>
+            <br/>
+            <br/>
+            <!--Our second Project on validation - (Spring MVC - Number Range Validation) -->
+            Free passes(*): <input type="text" th:field="*{freePasses}"/>
+            <span th:if="${#fields.hasErrors('freePasses')}" th:errors="*{freePasses}" class="error"></span>
+            
+            <br/>
+            <br/>
+            <!--Our third Project on validation - (Spring MVC - Regular Expression Validation) -->
+            Postal Code: <input type="text" th:field="*{postalCode}"/>
+            <span th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}" class="error"></span>
+            
+            <br/>
+            <br/>
+            
+            <!--Our third Project on validation - (Spring MVC - Regular Expression Validation) -->
+            Course Code: <input type="text" th:field="*{courseCode}"/>
+            <span th:if="${#fields.hasErrors('courseCode')}" th:errors="*{courseCode}" class="error"></span>
+            
+            <br/>
+            <br/>
+            
+            
+            
+            <input type="submit"/>
+            
+        </form>
+        
+        
+    </body>
+</html>

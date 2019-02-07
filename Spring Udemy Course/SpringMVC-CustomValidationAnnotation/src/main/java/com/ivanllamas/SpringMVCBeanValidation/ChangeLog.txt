@@ -1,0 +1,35 @@
+## This program will demonstrate how to create a custom annotation for Validating variables in our Customer.java class
+based on business logic that we will define and implement.
+
+## Step 1. Create a new package to store our custom validation classes
+
+## Step 2. create a new Java annotation type in our new package CourseCode.java
+
+## Step 3. Add the necessery annotations (More info in the class itself)
+//documented code in CourseCode.java
+
+## Step 4. Create CourseCodeConstraintValidator.java to validate our CourseCode.java
+//documented code comments can be found in the class that explains further whats going on in the code
+
+## Step 5. Create a variable in Customer.java and Add the new custom annotation to the variable
+
+## Step 6. Add an error message to our HTML form page
+
+## Step 7. Update our Confirmation page.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Special note: 
+th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+
+this basically says, if the fields 'lastName' has errors, it will display the errors in 'lastName'
