@@ -11,6 +11,25 @@ StudentRepo.java
 
 ## Step 4. We must create a service class that will handle the CRUD methods from our StudentRepo.java.
 
-## Create a controller to display the objects in the database ##TODO
+## Step 5. We will create a controller that redirects the user to a Student form, where they can add information, and create
+a student object. Once they input the student object, we create another controller method that 
+takes the student information, and uploads it to the database.
+
+More information on how it works can be found in StudentController.java
+
+
+Program class functions:
+HomeController - takes care of the main menu
+StudentController - creates student class from a form using Model, and retrieves user information from the model, 
+uploading the data to our database
+
+Student.java - our Entity class, it is mapped to our 'student' table in our database, and the variables are mapped to 
+each column within the database.
+
+StudentService.java - takes our Crudrepo interface, and applies its methods to upload Student objects into our database
+
+StudentRepo - our Crud repository, takes Student objects, used for our Service class.
+
+
 
 

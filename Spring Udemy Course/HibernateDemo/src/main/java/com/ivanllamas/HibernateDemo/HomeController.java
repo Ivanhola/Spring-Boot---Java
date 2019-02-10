@@ -20,13 +20,7 @@ public class HomeController {
     
     @RequestMapping("/")
     public String homePage(Model model){
-        //create a Student object, and add it into our database.
-        //#TODO, this is an incorrect usage of entering data to a database, We want to create a Student Object
-        //add that to a model, and then input data from a form or something using the Model attribute,
-        //we will then get that form data and input the Student object information, and use a StudentService to upload
-        //that data into our database. this was just used to demonstrate that the database is connected and works.
-    Student ivan = new Student("ivan", "l", "ivanl@Gmail.com");
-    service.add(ivan);
+       
     
     return "main-menu";
     }

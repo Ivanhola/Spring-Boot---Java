@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Form Processed</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <a href="student/studentForm">Student form</a>
+        Student confirmation: <span th:text="${studentObj.firstName + ' ' + studentObj.lastName + ' ' + studentObj.email}" />
     </body>
 </html>
