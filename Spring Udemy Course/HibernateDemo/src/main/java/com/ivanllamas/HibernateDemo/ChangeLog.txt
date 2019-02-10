@@ -1,0 +1,16 @@
+## In this program we will learn to set up a project and connect to the Hibernate database, since we used Spring
+initializr, we will set up the connection to the Database in our application.properties file
+
+## Step 1. Create a Student.java class that will be mapped to our database table "student" in our database using @Entity
+and @Table
+
+## Step 2. Create the Variables and map the variables to the columns of our Database in Student.java
+
+## Step 3. We must create a repo interface that will handle CRUD database methods, it will take Student objects
+StudentRepo.java
+
+## Step 4. We must create a service class that will handle the CRUD methods from our StudentRepo.java.
+
+## Create a controller to display the objects in the database ##TODO
+
+
