@@ -37,7 +37,7 @@ public class StudentController {
         Student student = new Student(tempStudent.getFirstName(), tempStudent.getLastName(), tempStudent.getEmail());
         System.out.println("Adding student to our database.." + student.toString());
         //just for this program, we will delete all the students, and only display this one we added
-        service.deleteAll();
+        //service.deleteAll();
         service.add(student);
         
         System.out.println("Uploaded to database!");
