@@ -25,6 +25,10 @@ public class StudentController {
         Student student = new Student();
         model.addAttribute("studentObj", student);
         
+        //getting a student from our database example
+        System.out.println(service.getStudentById(5).toString());
+        
+        
         return "student-form";
     }
     
