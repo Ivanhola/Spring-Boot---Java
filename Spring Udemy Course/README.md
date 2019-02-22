@@ -81,7 +81,7 @@ __PART 2__[Spring MVC - Adding beans to override the error message when inputing
 
 - [Spring MVC - Custom Validation & Custom Annotation example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMVC-CustomValidationAnnotation): This program demonstrates how to create your own Custom annotation, and using it to create your own Validation rules for the annotation. Uses __ConstraintValidator__ interface to set our own validation rules
 
-- [Spring Boot - Hibernate, Connecting to a Database with Repository(https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/HibernateDemo): This program demonstrates how to connect & upload objects to a database using Hibernate & JPA.
+- [Spring Boot - Hibernate, Connecting to a Database with Repository](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/HibernateDemo): This program demonstrates how to connect & upload objects to a database using Hibernate & JPA.
 
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
