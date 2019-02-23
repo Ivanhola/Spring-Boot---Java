@@ -87,5 +87,7 @@ __PART 2__[Spring MVC - Adding beans to override the error message when inputing
 
 - [Spring Boot - DevTools usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootDevToolsDemo): Added DevTools dependency which allows us to make changes in our Java classes, and reload the page for us automatically when saving the file
 
+- [Spring Boot - Actuator Usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootActuatorDemo): Added Actuator dependency which allows us to monitor the current state of the application, we can manage the actuator endpoints in __application.properties__ , in this program we can find the actuator endpoints using __localhost:8080/actuator/info__ or any other endpoint after /actuator/XXX
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
