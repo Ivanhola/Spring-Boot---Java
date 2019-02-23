@@ -85,5 +85,7 @@ __PART 2__[Spring MVC - Adding beans to override the error message when inputing
 
 - [Spring Boot - Simple RestController Example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootRestDemo): Very basic example of using a RestController with Spring boot
 
+- [Spring Boot - DevTools usage](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootDevToolsDemo): Added DevTools dependency which allows us to make changes in our Java classes, and reload the page for us automatically when saving the file
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
