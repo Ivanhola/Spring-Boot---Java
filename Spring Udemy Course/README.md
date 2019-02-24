@@ -92,5 +92,7 @@ __PART 2__[Spring MVC - Adding beans to override the error message when inputing
 - [Spring Boot - Actuator with Spring Security](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootActuatorSecurityDemo): Added Spring Security Dependency, this adds a login page in our actuator endpoints, which prevents sensitive information from being viewed by users without permission.
 Change the password in __application.properties__ and added exclusion of __/health__ & __/info__
 
+- [Spring Boot - Injecting Values from a properties file](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootPropertiesFileDemo): Previously we've learned that we can inject values into a variable from a properties file using __@Value__ annotation, we did it a bit differently in spring MVC, in this example, we make use of the __@PropertySource__ annotation in the correct file hirerarcy, to read from a seperate properties file, instead of the same __application.properties__ file.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
