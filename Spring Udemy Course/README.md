@@ -94,5 +94,7 @@ Change the password in __application.properties__ and added exclusion of __/heal
 
 - [Spring Boot - Injecting Values from a properties file](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootPropertiesFileDemo): Previously we've learned that we can inject values into a variable from a properties file using __@Value__ annotation, we did it a bit differently in spring MVC, in this example, we make use of the __@PropertySource__ annotation in the correct file hirerarcy, to read from a seperate properties file, instead of the same __application.properties__ file.
 
+- [Spring Boot - Configuring Server from properties file](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootConfigurationDemo): Quick example demonstrating the server configurations, and the various different properties you can change on your __application.properties__ file.
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
