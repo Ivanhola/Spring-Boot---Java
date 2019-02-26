@@ -1,0 +1,33 @@
+## In this project we will create a REST API, for employees, that will contain basic CRUD methods
+## We will be using the Hibernate API version for interacting with the database in this project
+
+Step 1. Enter your database datasource in application.properties
+
+Step 2. Create a package for our entities, and map the entities to our database
+
+Mapping Annotations:
+@Id - Primary key ID in the database
+@GeneratedValue - The type of value it is in MySQL (Auto increment for example)
+@Column - Specifies the column in the database name, the variable will be mapped to the column in the database
+
+
+
+Step 3. Create an Employee class in the entities package, and map the variables to the database, create a no-args constructor
+and a constructor for the variables that aren't the ID, getters and setters, and toString method
+
+Step 4. Create a new package, and create an EmployeeDAO interface
+
+Step 5. Create a new class, that implements the EmployeeDAO interface and creates a query to our database,
+Check EmployeeDAOImplementation.java comments for more information
+
+Step 6. Create a REST controller to inject and request DAO methods to read from our database.
+
+Notes: 
+
+In simplistic terms, the way this program works, is You create a DAO interface for our Employee entity.
+You create a 'service' class that implements the DAO, and inject the DAO interface onto your controller which calls the 
+EmployeeDAOImplementation.java class, and injects its method 'findAll()' into the Controller method.
+
+ private EmployeeDAO employeeDAO; can also be changed to: private EmployeeDAOImplementation employeeDao;
+and the constructor in our controller can use the EmployeeDAOImplementation, and the program would still work the same
+
