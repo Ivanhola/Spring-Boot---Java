@@ -100,5 +100,7 @@ Change the password in __application.properties__ and added exclusion of __/heal
 
 - [Spring Boot - Crud application REST API, Version 2 Standard JPA](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootCRUDStandardJPA): Similar to our [Past program](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootCRUD), this project makes use of interacting with a REST API to our database, by using the __Standard JPA__ methods instead of the hibernate native API (All the changes are im __EmployeeDAOJpaImplementation.Java__).
 
+- [Spring Boot - Crud Application REST API, Version 3 Spring Data JPA](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootCRUDSpringDataJPA): Program Which demonstrates the use of Spring Data JPA to create a CRUD project to interact with our database with a REST API. Made use of __JpaRepository__ and implementing a __Service__ class to interact with the __Repository__
+
 
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
