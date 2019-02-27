@@ -1,0 +1,10 @@
+This program will make use of Spring Data JPA, similar to https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/HibernateDemo
+We will connect and use JpaRepository from Spring Data JPA
+
+And use its integrated CRUD methods
+
+Step 1. Create our JpaRepository in our DAO Package
+
+Step 2. Create our Service to implement our JpaRepository in our Service Package,
+
+Step 3. Fix our Rest Controller to inject the JpaRepository Service class, that allows us to use the CRUD methods we defined
