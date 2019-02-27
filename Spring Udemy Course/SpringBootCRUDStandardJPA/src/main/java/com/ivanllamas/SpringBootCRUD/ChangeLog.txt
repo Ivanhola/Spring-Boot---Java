@@ -1,0 +1,11 @@
+This program will make use of the Standard JPA. instead of the native hibernate API from our version 1 program.
+
+Step 1. create an EmployeeDAOJPA implement class in our DAO package
+
+The difference between this version and the Version 1, is that we use JPA implementation to run database queries using the EntityManager.
+The program will still require A service interface that handles @Transactional, that calls the EmployeeDAO that then calls the EmployeeDAOJpaImplementation
+which handles the database queries
+
+The benefit of using this type of setup, is that if we needed to use another form of JPA, we can simple create a different class
+to implement the EmployeeDAO and we wouldn't need to modify anything else
+
