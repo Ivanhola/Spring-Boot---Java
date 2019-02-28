@@ -1,0 +1,17 @@
+This program is an extended version of
+https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringBootCRUDSpringDataREST
+And we are going to configure some properties in the Spring Data Rest API
+
+Step 1. Change the path from the default /employees to /members by going into our EmployeeRepository.java and adding an 
+annotation
+test it out in 
+localhost:8080/api/members
+
+Step 2. Change the default page size in application.properties
+this will now display 3 elements in each page
+
+
+run a test for http://localhost:8080/api/members?sort=lastName
+this will sort in ascending order by lastName
+
+run a test for http://localhost:8080/api/members?sort=firstName,desc
