@@ -1,0 +1,10 @@
+This program will demonstrate usage of Spring Data REST.
+Spring data rest automatically generates and gives us REST API endpoints for our defined entity
+The only thing required is an entity and a repository for our entity & the spring data rest dependency
+
+In this project we have an Employee entity, Spring data rest will automatically create a GET, POST, PUT, DELETE API under the
+/employees
+/employees/{}
+just like our previous applications.
+
+In this program we make use of Postman to send GET, DELETE, PUT, POST requests to our API 
