@@ -1,0 +1,15 @@
+In this application, we will create an HTML table to represent an arraylist of <Employee> objects in a thymeleaf template
+
+Step 1. create a model package where we will create our Employee.java
+
+Step 2. Create a Controller to handle creating a list of Employee Objects, and adding the list to a model in our controller
+EmployeeController.java
+
+
+
+
+Step 3. Create a thymeleaf HTML file, to read and output  table based on the ArrayList that was passed in from our controller
+
+Step 4. Add css to our HTML table
+
+ 
