@@ -107,4 +107,6 @@ It essentially has all of our Rest controller methods from [this project](https:
 
 - [Spring boot + Thymeleaf basic example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemo): This shows Thymeleaf integration with Spring boot. Although [we have other example programs using thymeleaf](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/SpringMvc-FormTagApp), this series will create and solely focus on thymeleaf integration, whereas the Spring MVC focused more towards the model, and other Spring MVC core subjects.
 
+- [Spring Boot + Thymeleaf adding CSS to a Thymeleaf Template](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemoCSS): In this program we take our [previous](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemo) thymeleaf demo, and apply CSS stylesheet to our helloworld.html template. The CSS file must be stored under __/src/resource/static__ for spring boot to be able to read it.
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
