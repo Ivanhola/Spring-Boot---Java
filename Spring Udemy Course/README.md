@@ -109,4 +109,6 @@ It essentially has all of our Rest controller methods from [this project](https:
 
 - [Spring Boot + Thymeleaf adding CSS to a Thymeleaf Template](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemoCSS): In this program we take our [previous](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemo) thymeleaf demo, and apply CSS stylesheet to our helloworld.html template. The CSS file must be stored under __/src/resource/static__ for spring boot to be able to read it.
 
+- [Spring Boot + Thymeleaf Creating an HTML Table](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemoHTMLTable): In this project we create an HTML table using Thymeleaf template by passing an ArrayList of __Employee__ objects through the __Model__ in the controller, and iterating through the arraylist using Thymeleaf looping. We use __BootStrap__ to make the table look nice. 
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
