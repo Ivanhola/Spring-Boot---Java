@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- theDate is the model object type we passed in, in our Controller -->
+        <p th:text=" 'Time on the server is ' + ${theDate}" />
+    </body>
+</html>
