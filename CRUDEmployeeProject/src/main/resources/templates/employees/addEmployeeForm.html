@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add An Employee to our Database</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+                                      <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <!-- Bootstrap container-->
+        
+        <div class="container">
+            <h3>Employee Directory</h3>
+            <hr>
+            
+            <p class="h4 mb-4">Save Employee</p>
+            
+            <!-- Form to add employee-->
+            
+            <form action="#" th:action="@{/employees/save}"
+                  th:object="${employee}" method="POST">
+                
+                <!-- Add a hidden form field to handle update, this tells the model attribute which employee to update
+                if an id was passed in-->
+                <input type="hidden" th:field="*{id}">
+                
+                <!-- Calls the model 'employee' that is in our spring container, and uses that objects variables
+                to call getters/setters -->
+                <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4" placeholder="First name">
+                <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4" placeholder="Last name">
+                <input type="text" th:field="*{email}" class="form-control mb-4 col-4" placeholder="Email">
+
+                <!-- Calling the Setter methods in our employee object, setting the variables 'firstName' 'lastName'
+                'email' when hitting the submit button-->
+                <button type="submit" class="btn btn-info col-2">Save</button>
+
+            </form>
+            
+            <a th:href="@{/employees/list}"> Back to Employees List </a>
+                
+            
+        </div>
+    </body>
+</html>
