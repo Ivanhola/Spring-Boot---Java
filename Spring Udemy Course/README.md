@@ -111,4 +111,6 @@ It essentially has all of our Rest controller methods from [this project](https:
 
 - [Spring Boot + Thymeleaf Creating an HTML Table](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course/ThymeleafDemoHTMLTable): In this project we create an HTML table using Thymeleaf template by passing an ArrayList of __Employee__ objects through the __Model__ in the controller, and iterating through the arraylist using Thymeleaf looping. We use __BootStrap__ to make the table look nice. 
 
+- [Spring Boot + Thymeleaf, Fully Functional CRUD App](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/CRUDEmployeeProject): A Simple CRUD Application, Allows us to create, read, update, and delete an Employee from our Database by using Various different methods and implementations, Full Documentation on the README of that program.
+
 _These are just demos and concepts, further explanation into these concepts and demonstrations are further documented in google docs Notes that I have organized and taken._
