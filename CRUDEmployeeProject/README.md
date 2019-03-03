@@ -8,6 +8,29 @@ We display the list of employees using __HTML__ + __Thymeleaf__ in our front-end
 
 #
 
+### MySQL Script
+```SQL
+CREATE DATABASE  IF NOT EXISTS `employee_directory`;
+USE `employee_directory`;
+
+--
+-- Table structure for table `employee`
+--
+
+DROP TABLE IF EXISTS `employee`;
+
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+```
+
+#
+
 #### This project is composed of 4 Packages under src/main/java
 - [__Service__](src/main/java/com/ivanllamas/ThymeleafDemo/Service) - This contains the class needed to perform database operations on __Employee__ Objects
 
