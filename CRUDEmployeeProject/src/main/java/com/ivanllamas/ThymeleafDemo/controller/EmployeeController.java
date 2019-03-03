@@ -59,7 +59,7 @@ public class EmployeeController {
     //Mapping for a POST method, when the form is submitted, we will process the form by getting the 
     //data from the model attribute 'employees' and binding it to an Employee object
     @PostMapping("/save")
-    public String saveEmployee(@ModelAttribute("employees") Employee employee){
+    public String saveEmployee(@ModelAttribute("employee") Employee employee){
        
         //save the employee to our database by calling the save() method in the employee service
         employeeService.save(employee);
