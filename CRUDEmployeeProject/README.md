@@ -183,6 +183,200 @@ public class EmployeeController {
   }
 ```
 
+### GET Mapping for "/list"
+
+```Java
+ @GetMapping("/list")
+    public String employeeList(Model model){
+    
+        //create a list of Employee objects, and populate the list with the list returned in employeeService.findsAll()
+        List<Employee> theEmployees = employeeService.findsAll();
+        
+        //we take that data and add to the spring model, so thymeleaf can read this data
+        model.addAttribute("employees", theEmployees);
+        
+        
+        //will look under the folder employees in our templates folder then look for employee-list.html
+        return "employees/employee-list";
+    }
+```
+When we go to localhost:8080 __/employees/list__ it will call this *GET* Controller, which adds an __'employees'__ attribute to our model (which is of type :a list of EmployeeObjects) which is then passed on to our __Thymeleaf Template__ *[employee-list.html](src/main/resources/templates/employees/employee-list.html)*
+
+The model is used in this segment of code in our HTML Page
+
+```HTML
+<tr th:each="tempEmployee : ${employees}">
+                    <td th:text="${tempEmployee.firstName}"/>
+                    <td th:text="${tempEmployee.lastName}"/>
+                    <td th:text="${tempEmployee.email}"/>
+</tr>
+```
+
+We can see that there is a _foreach_ loop, where we read from the attribute `${employees}` (our model attribute that we passed in)
+and we assign the values from the (model attribute) __list__ to a temporary Employee Object `tempEmployee`. We then can access the _variables_ from the Employee object, and output the values from 'firstName','lastName','email'.
+
+### GET Mapping for "/addEmployerForm"
+
+```Java
+   @GetMapping("/addEmployeeForm")
+    public String addEmployeeForm(Model model){
+        
+        //create an Employee object that the model attribute can use to bind form data
+        Employee employee = new Employee();
+        
+        //adding an attribute to our model called 'employee' of type Employee (object)
+        model.addAttribute("employee", employee);
+        
+        return "employees/addEmployeeForm";
+    }
+```
+
+When the user is sent to URL localhost:8080 __/employees/addEmployeeForm__, this controller will be called, which adds a _model attribute_ with the name __'employee'__ of type _Employee_. This controller then displays the [addEmployeeForm.html](src/main/resources/templates/employees/addEmployeeForm.html) page.
+
+
+In our HTML Page we have a form
+```HTML
+
+<form action="#" th:action="@{/employees/save}"
+                  th:object="${employee}" method="POST">
+                
+                <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4" placeholder="First name">
+                <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4" placeholder="Last name">
+                <input type="text" th:field="*{email}" class="form-control mb-4 col-4" placeholder="Email">
+
+                <button type="submit" class="btn btn-info col-2">Save</button>
+
+            </form>
+```
+
+__Let's break it down__
+```HTML
+<form action="#" th:action="@{/employees/save}"
+                  th:object="${employee}" method="POST">
+```
+- _We have a Thymeleaf Form that performs the action `@{/employees/save}`, this is basically the path that the form will go to when the submit button is pressed, it will go to the URL with a __POST__ method to localhost:8080_ __/employees/save__
+
+- the `th:object=${employee}` referes to the __Model__ attribute 'employee' that we passed in from our __addEmployeeForm()__ controller method.
+
+#
+
+```HTML
+                <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4" placeholder="First name">
+                <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4" placeholder="Last name">
+                <input type="text" th:field="*{email}" class="form-control mb-4 col-4" placeholder="Email">
+```
+
+This part of the code, is a textfield input, allowing the user to enter a value in the text field, and that value will be saved to the field `th:field=*{firstName}` which in this case, is the variable from the __employee__ attribute which is an __Employee__ object.
+
+
+
+
+```HTML
+  <button type="submit" class="btn btn-info col-2">Save</button>
+```
+
+
+Thymeleaf makes use of __Getters and Setters__ so when the form is submitted, it will call the __Setter method__ for each `th:field`, setting the value of each variable equal to the value that the _user put in the textfield_. __This essentially creates values from the 'employee' object. Behind the scenes, it would look something like__
+
+```Java
+Employee employee = new Employee();
+employee.setFirstName("Ivan");
+employee.setLastName("Llamas");
+employee.setEmail("ivan@gmail.com");
+
+```
+
+The form calls the __Setter__ method when submitted, as well as `th:action="@{/employees/save}"`
+
+# 
+
+### POST Mapping for "/save"
+this mapping is accessed by hitting the submit button, which expands on our last point in our __addEmployeeForm.html__
+
+```Java
+    @PostMapping("/save")
+    public String saveEmployee(@ModelAttribute("employees") Employee employee){
+       
+        //save the employee to our database by calling the save() method in the employee service
+        employeeService.save(employee);
+        
+        //use a redirect to prevent users from dublicating submissions
+        return "redirect:/employees/list";
+    }
+ ```
+ 
+ __After the form is submitted__ we will get the _model attribute_ by using the `@ModelAttribute("employee")` and bind the data from the model attribute to `Employee employee`. After that we will simply perform the `.save()` method and save the _object_ data into our database.
+ 
+#
+
+### GET Mapping for "/updateEmployeeForm"
+
+This Controller method is accessed from our list button, notice we create a variable `employeeId` that is set equal to the value from `${tempEmployee.id}`
+
+```HTML
+ <a th:href="@{/employees/updateEmployeeForm(employeeId=${tempEmployee.id})}"
+                   class="btn btn-info btn-sm">Update</a>
+```
+
+Looking at our code:
+```Java
+ @GetMapping("/updateEmployeeForm")
+    public String showFormForUpdate(@RequestParam("employeeId") long id, Model model){
+        
+        //get the employee by id from our database
+        Employee theEmployee = employeeService.findById(id);
+        
+        //set the employee passed in as a model attribute to pre-populate the form
+        model.addAttribute("employee", theEmployee);
+        
+        return "employees/addEmployeeForm";
+    }
+```
+
+We simply use __`@RequestParam("employeeId")`__ which gets the value from the variable we created in our HTML page `employeeId` and binds that value to `long id`.
+
+After that, we search for an employee with the id from the value passed in, and create a model from the object we got. Model named `employee`, the `employee` model we passed in has all the values from the __Object__ we got from the database in 
+
+```Java
+Employee theEmployee = employeeService.findById(id);
+```
+
+By sending the model object to __/addEmployeeForm__
+
+we make use of 
+
+```HTML
+<input type="hidden" th:field="*{id}">
+```
+
+Which allows us to populate the form fields by id. __Remember, when the form is called, it will call GETTER methods, and when it is submitted it will call SETTER methods. In this case when calling Getter, it will get the values from the model attribute, and populate them onto the fields__
+
+#
+
+### GET Mapping for "/delete"
+
+This Controller method is accessed from our list button, notice we create a variable `employeeId` that is set equal to the value from `${tempEmployee.id}`
+
+```HTML
+ <a th:href="@{/employees/delete(employeeId=${tempEmployee.id})}"
+                   class="btn btn-info btn-sm">Update</a>
+```
+
+Looking at our code:
+```Java
+ @GetMapping("/delete")
+    public String delete(@RequestParam("employeeId") long id){
+        
+        //delete from our database
+        employeeService.deleteById(id);
+        
+        return "redirect:/employees/list";
+        
+    }
+    
+```
+
+As explained before, we request the Param `employeeId` and make a call to the database using `employeeService.deleteById()` method, and using the `id` value passed in from the param we set to each object in the table.
 
  
  
