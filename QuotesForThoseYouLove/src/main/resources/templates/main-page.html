@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Message of the Day</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/modal.css}"/>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    </head>
+    <body>
+
+
+
+        <div class="modal">
+            <span class="close"><i class="fas fa-times"></i></span>
+
+            <div class="modal-content">
+
+
+                <div class="modal-text">
+                <span th:text="${message.message}" style="color:red; font-size: 400%; width: 100%;"/>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>
