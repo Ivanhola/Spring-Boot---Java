@@ -4,7 +4,7 @@ package com.ivanllamas.entity;
 import java.time.LocalDate;
 
 
-public class Pet {
+public class Pet extends BaseEntity{
 
     //variables for our Pet
     private PetType petType;
