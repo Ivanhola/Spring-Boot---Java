@@ -1,5 +1,5 @@
 
-package com.ivanllamas.SpringBootPetClinic.entity;
+package com.ivanllamas.entity;
 
 import java.time.LocalDate;
 

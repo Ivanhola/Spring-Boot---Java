@@ -1,4 +1,4 @@
-package com.ivanllamas.SpringBootPetClinic;
+package com.ivanllamas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

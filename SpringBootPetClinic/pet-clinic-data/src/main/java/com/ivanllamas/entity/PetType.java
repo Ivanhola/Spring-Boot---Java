@@ -1,5 +1,5 @@
 
-package com.ivanllamas.SpringBootPetClinic.entity;
+package com.ivanllamas.entity;
 
 
 public class PetType {
