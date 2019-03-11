@@ -6,7 +6,7 @@ package com.ivanllamas.entity;
 import java.io.Serializable;
 
 
-//this will be the 'base' entity that houses an ID value that our entities will implement
+//this will be the 'base' entity that houses an ID value that our entities will implement.
 public class BaseEntity implements Serializable{
 
     private Long id;
