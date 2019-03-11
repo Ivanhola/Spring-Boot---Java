@@ -1,16 +1,19 @@
 package com.ivanllamas.services;
 
 import com.ivanllamas.entity.Owner;
-import java.util.Set;
+
 
 //this will be the service we use for our Owner entity to perform CRUD operations
-public interface OwnerService {
+public interface OwnerService extends CrudService<Owner,Long> {
    
     
    Owner findByLastName(String lastName); 
-   Owner findById(Long id);
-   Owner save(Owner owner);
-   Set<Owner> findAll();
+   
+   /*We don't need these anymore because they are implemented in our CrudService*/
+   
+   //Owner findById(Long id);
+   //Owner save(Owner owner);
+   //Set<Owner> findAll();
    
    
    
