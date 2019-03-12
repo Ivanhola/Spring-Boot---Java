@@ -5,9 +5,11 @@ import com.ivanllamas.entity.Owner;
 import com.ivanllamas.services.CrudService;
 import com.ivanllamas.services.OwnerService;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
-
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
     @Override

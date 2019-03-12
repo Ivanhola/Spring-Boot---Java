@@ -7,6 +7,7 @@ import com.ivanllamas.services.VetService;
 import com.ivanllamas.services.map.OwnerServiceMap;
 import com.ivanllamas.services.map.VetServiceMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,10 +20,14 @@ public class dataloader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public dataloader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+
+    //Depenceny injection to inject our services
+    @Autowired
+    public dataloader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
+
 
 
     @Override

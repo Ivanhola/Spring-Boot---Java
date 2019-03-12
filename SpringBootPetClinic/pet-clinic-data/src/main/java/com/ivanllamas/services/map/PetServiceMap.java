@@ -5,9 +5,11 @@ import com.ivanllamas.entity.Pet;
 import com.ivanllamas.services.CrudService;
 import com.ivanllamas.services.PetService;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Set;
 
-
+@Service
 public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService {
 
     @Override
