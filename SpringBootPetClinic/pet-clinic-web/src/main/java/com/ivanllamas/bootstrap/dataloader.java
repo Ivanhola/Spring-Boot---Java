@@ -1,6 +1,9 @@
 package com.ivanllamas.bootstrap;
 
+import java.time.LocalDate;
+
 import com.ivanllamas.entity.Owner;
+import com.ivanllamas.entity.Pet;
 import com.ivanllamas.entity.PetType;
 import com.ivanllamas.entity.Vet;
 import com.ivanllamas.services.OwnerService;
@@ -46,16 +49,40 @@ public class dataloader implements CommandLineRunner {
         PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
-        //owner1.setId(1L);
+
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("Benidorm Cir");
+        owner1.setCity("Corona");
+        owner1.setTelephone("9515123122");
+        //adding dogs to our owner
+        Pet mikesPet = new Pet();
+        //setting the pet to a dog
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setName("Spike");
+        mikesPet.setBirthDate(LocalDate.now());
+      
+        owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
 
+
         Owner owner2 = new Owner();
-        //owner2.setId(2L);
+ 
         owner2.setFirstName("Fiora");
         owner2.setLastName("France");
+        owner2.setAddress("Meridian Dr 123");
+        owner2.setCity("Hemet");
+        owner2.setTelephone("9512321222");
+
+        Pet fionasPet = new Pet();
+        fionasPet.setPetType(savedCatPetType);
+        fionasPet.setOwner(owner2);
+        fionasPet.setName("Whiskers");
+        fionasPet.setBirthDate(LocalDate.now());
+
+        owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
 

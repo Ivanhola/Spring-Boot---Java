@@ -1,13 +1,14 @@
 
 package com.ivanllamas.entity;
 
+import java.util.HashSet;
 import java.util.Set;
 
 //pet owner, also inherits from Person
 public class Owner extends Person {
 
     //owner has a set of pets list of pets
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
 
     //Add address telephone and other variables
     private String address;
