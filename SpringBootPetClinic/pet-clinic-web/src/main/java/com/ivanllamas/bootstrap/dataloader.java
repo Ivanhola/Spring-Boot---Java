@@ -39,7 +39,7 @@ public class dataloader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        /* PetType Objects */
         PetType dog = new PetType();
         dog.setName("Dog");
         PetType savedDogPetType = petTypeService.save(dog);
@@ -48,6 +48,7 @@ public class dataloader implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
+        /* Owner Objects */
         Owner owner1 = new Owner();
 
         owner1.setFirstName("Michael");
@@ -88,6 +89,7 @@ public class dataloader implements CommandLineRunner {
 
         System.out.println("loaded owners . . .");
 
+        /* Vet Objects */
         Vet vet1 = new Vet();
         //vet1.setId(1L);
         vet1.setFirstName("Sam");
