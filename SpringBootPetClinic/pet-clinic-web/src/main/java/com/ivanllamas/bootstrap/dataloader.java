@@ -1,8 +1,10 @@
 package com.ivanllamas.bootstrap;
 
 import com.ivanllamas.entity.Owner;
+import com.ivanllamas.entity.PetType;
 import com.ivanllamas.entity.Vet;
 import com.ivanllamas.services.OwnerService;
+import com.ivanllamas.services.PetTypeService;
 import com.ivanllamas.services.VetService;
 import com.ivanllamas.services.map.OwnerServiceMap;
 import com.ivanllamas.services.map.VetServiceMap;
@@ -19,19 +21,29 @@ public class dataloader implements CommandLineRunner {
     //get some services
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
 
     //Depenceny injection to inject our services
     @Autowired
-    public dataloader(OwnerService ownerService, VetService vetService) {
+    public dataloader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
 
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
         //owner1.setId(1L);
@@ -65,6 +77,8 @@ public class dataloader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Saving vets . . .");
+
+
 
         
     }
