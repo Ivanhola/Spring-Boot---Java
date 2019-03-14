@@ -8,6 +8,7 @@ import com.ivanllamas.services.OwnerService;
 import com.ivanllamas.services.PetService;
 import com.ivanllamas.services.PetTypeService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -19,7 +20,7 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements O
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-
+    @Autowired
     public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
