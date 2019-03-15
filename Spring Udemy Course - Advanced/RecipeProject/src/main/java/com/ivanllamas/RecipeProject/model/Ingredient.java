@@ -3,10 +3,12 @@ package com.ivanllamas.RecipeProject.model;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  * Ingredient entity
@@ -26,8 +28,23 @@ public class Ingredient {
     //We dont want to cascade here, because if we delete an ingredient, we don't want to delete the recipe.
     @ManyToOne
     private Recipe recipe;
+    
+    //relationship to UnitOfMeasure
+    @OneToOne(fetch = FetchType.EAGER)
+    private UnitOfMeasure uom;
+   
 
     //getters and setters
+
+    public UnitOfMeasure getUom() {
+        return uom;
+    }
+
+    public void setUom(UnitOfMeasure uom) {
+        this.uom = uom;
+    }
+    
+    
     
     public Long getId() {
         return id;
