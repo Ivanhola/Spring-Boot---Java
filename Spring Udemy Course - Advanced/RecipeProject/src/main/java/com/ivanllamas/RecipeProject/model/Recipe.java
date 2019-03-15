@@ -1,11 +1,13 @@
 package com.ivanllamas.RecipeProject.model;
 
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /** RECIPE ENTITY
@@ -26,7 +28,12 @@ public class Recipe {
     private String source;
     private String url;
     private String directions;
-
+    
+    //this defines the relationship from recipe class, 
+    //the Set of Ingredient objects is going to be in a property called recipe
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "recipe")
+    private Set<Ingredient> ingredients;
+    
     @Lob
     private Byte[] image;
 
@@ -35,6 +42,15 @@ public class Recipe {
 
     //getters and setters
 
+    public Set<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(Set<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    
 
     public Long getId() {
         return this.id;
