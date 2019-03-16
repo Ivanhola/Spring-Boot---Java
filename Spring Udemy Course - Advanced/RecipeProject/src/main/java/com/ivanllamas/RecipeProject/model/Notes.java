@@ -17,6 +17,7 @@ public class Notes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //bidirectional relationship to recipe
     @OneToOne
     private Recipe recipe;
 

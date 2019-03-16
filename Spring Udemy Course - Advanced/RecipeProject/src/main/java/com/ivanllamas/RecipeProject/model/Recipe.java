@@ -3,6 +3,8 @@ package com.ivanllamas.RecipeProject.model;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +38,13 @@ public class Recipe {
     
     @Lob
     private Byte[] image;
+    
+    
+    //annotation to mark our enum in our database
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty; 
 
+    //relationship to Note object
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
@@ -132,5 +140,14 @@ public class Recipe {
         this.notes = notes;
     }
 
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    
 
 }
