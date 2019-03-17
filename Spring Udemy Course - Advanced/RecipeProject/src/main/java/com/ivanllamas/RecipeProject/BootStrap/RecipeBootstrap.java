@@ -43,7 +43,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     //method to return a list of Recipes
     private List<Recipe> getRecipes(){
        
-        //List of size 2
+        //Initialize List of size 2
         List<Recipe> recipes = new ArrayList<>(2);
         
         
@@ -158,6 +158,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.addIngredient(new Ingredient("freshly grated black pepper", new BigDecimal(2), dashUom));
         guacRecipe.addIngredient(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), eachUom));
 
+        //Setting our category in our Many to many relationship
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
         
