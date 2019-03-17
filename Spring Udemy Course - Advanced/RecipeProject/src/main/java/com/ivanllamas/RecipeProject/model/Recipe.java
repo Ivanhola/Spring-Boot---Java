@@ -153,6 +153,16 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+        //convenience to set Recipe
+        notes.setRecipe(this);
+    }
+    
+    //method for adding ingredient to our recipe
+    public Recipe addIngredient(Ingredient ingredient){
+        //sets the recipe to the 'Recipe' object for example guacRecipe.addIngredient(...) sets recipe for guacRecipe(this)
+       ingredient.setRecipe(this);
+       this.ingredients.add(ingredient);
+       return this;
     }
 
     public Difficulty getDifficulty() {
