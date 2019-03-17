@@ -2,14 +2,30 @@
 package com.ivanllamas.entity;
 
 import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity{
 
-    //variables for our Pet
+    @Column(name = "name")
     private String name;
+    
+    //many pets have one type
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
+    
+    //many pets can have one owner
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+    
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
 

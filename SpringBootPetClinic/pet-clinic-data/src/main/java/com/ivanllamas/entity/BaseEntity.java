@@ -15,6 +15,7 @@ import javax.persistence.MappedSuperclass;
 */
 
 //MappedSuperclass tells spring data that other objects will derive from this entity (other classes extend this)
+// and will NOT be created in the datbase
 
 @MappedSuperclass
 public class BaseEntity implements Serializable{
