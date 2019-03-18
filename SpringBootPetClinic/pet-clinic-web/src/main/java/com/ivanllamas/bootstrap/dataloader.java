@@ -7,12 +7,13 @@ import com.ivanllamas.entity.Pet;
 import com.ivanllamas.entity.PetType;
 import com.ivanllamas.entity.Specialty;
 import com.ivanllamas.entity.Vet;
+import com.ivanllamas.entity.Visit;
 import com.ivanllamas.services.OwnerService;
 import com.ivanllamas.services.PetTypeService;
 import com.ivanllamas.services.SpecialtyService;
 import com.ivanllamas.services.VetService;
-import com.ivanllamas.services.map.OwnerServiceMap;
-import com.ivanllamas.services.map.VetServiceMap;
+import com.ivanllamas.services.VisitService;
+import static java.lang.System.out;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,15 +29,19 @@ public class dataloader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
 
     //Depenceny injection to inject our services
     @Autowired
-    public dataloader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public dataloader(OwnerService ownerService, VetService vetService, 
+            PetTypeService petTypeService, SpecialtyService specialtyService,
+            VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -99,6 +104,13 @@ public class dataloader implements CommandLineRunner {
            owner2.getPets().add(fionasPet);
    
            ownerService.save(owner2);
+           
+           Visit catVisit = new Visit();
+           catVisit.setPet(fionasPet);
+           catVisit.setDate(LocalDate.now());
+           catVisit.setDescription("Itchy kitty");
+           
+           visitService.save(catVisit);
    
            System.out.println("loaded owners . . .");
    
