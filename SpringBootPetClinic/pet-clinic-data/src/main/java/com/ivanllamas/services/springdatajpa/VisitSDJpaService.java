@@ -4,6 +4,7 @@ package com.ivanllamas.services.springdatajpa;
 import com.ivanllamas.entity.Visit;
 import com.ivanllamas.repository.VisitRepository;
 import com.ivanllamas.services.VisitService;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,10 @@ public class VisitSDJpaService implements VisitService{
     
     @Override
     public Set<Visit> findAll() {
+       Set<Visit> visits = new HashSet<>();
+       visitRepository.findAll().forEach(visits::add);
        
-        return (Set<Visit>) visitRepository.findAll();
+        return visits;
     }
 
     @Override

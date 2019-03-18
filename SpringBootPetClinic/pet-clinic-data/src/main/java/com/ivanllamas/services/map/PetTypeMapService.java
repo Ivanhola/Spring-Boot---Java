@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.ivanllamas.entity.PetType;
 import com.ivanllamas.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
  * PetTypeMapService
  */
 @Service
+@Profile({"default","map"})
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

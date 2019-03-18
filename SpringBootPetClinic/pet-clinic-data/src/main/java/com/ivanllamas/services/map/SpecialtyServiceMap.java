@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.ivanllamas.entity.Specialty;
 import com.ivanllamas.services.SpecialtyService;
+import org.springframework.context.annotation.Profile;
 
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
  * SpecialtyServiceMap
  */
 @Service
+@Profile({"default","map"})
 public class SpecialtyServiceMap extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override

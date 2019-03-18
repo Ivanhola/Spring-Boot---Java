@@ -4,6 +4,7 @@ package com.ivanllamas.services.springdatajpa;
 import com.ivanllamas.entity.Specialty;
 import com.ivanllamas.repository.SpecialtyRepository;
 import com.ivanllamas.services.SpecialtyService;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,9 @@ public class SpecialtySDJpaService implements SpecialtyService{
     
     @Override
     public Set<Specialty> findAll() {
-        return (Set<Specialty>) specialtyRepository.findAll();
+        Set<Specialty> specialties = new HashSet<>();
+        specialtyRepository.findAll().forEach(specialties::add);
+        return specialties;
     }
 
     @Override

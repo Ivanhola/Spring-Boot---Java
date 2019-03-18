@@ -4,6 +4,7 @@ package com.ivanllamas.services.springdatajpa;
 import com.ivanllamas.entity.PetType;
 import com.ivanllamas.repository.PetTypeRepository;
 import com.ivanllamas.services.PetTypeService;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,9 @@ public class PetTypeSDJpaService implements PetTypeService{
     
     @Override
     public Set<PetType> findAll() {
-        return (Set<PetType>) petTypeRepository.findAll();
+        Set<PetType> petTypes = new HashSet<>();
+        petTypeRepository.findAll().forEach(petTypes::add);
+        return petTypes;
     }
 
     @Override

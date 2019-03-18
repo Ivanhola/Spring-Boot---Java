@@ -4,6 +4,7 @@ package com.ivanllamas.services.springdatajpa;
 import com.ivanllamas.entity.Vet;
 import com.ivanllamas.repository.VetRepository;
 import com.ivanllamas.services.VetService;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,9 @@ public class VetSDJpaService implements VetService{
 
     @Override
     public Set<Vet> findAll() {
-     return (Set<Vet>) vetRepository.findAll();
+        Set<Vet> vets = new HashSet<>();
+        vetRepository.findAll().forEach(vets::add);
+     return vets;
     }
 
     @Override
