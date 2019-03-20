@@ -23,6 +23,20 @@ private String description;
 private Pet pet;
 
 
+    //constructor
+
+
+    public Visit() {
+    }
+
+    public Visit(LocalDate date, String description, Pet pet) {
+        this.date = date;
+        this.description = description;
+        this.pet = pet;
+    }
+    
+    
+
     public LocalDate getDate() {
         return this.date;
     }

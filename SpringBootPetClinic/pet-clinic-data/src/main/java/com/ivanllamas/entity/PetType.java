@@ -9,8 +9,23 @@ import javax.persistence.Table;
 @Table(name = "types")
 public class PetType extends BaseEntity{
     
+    
+    
     @Column(name = "name")
     private String name;
+
+    
+    //constructors
+    
+    
+    public PetType() {
+    }
+
+    public PetType(String name) {
+        this.name = name;
+    }
+    
+    
 
     public String getName() {
         return name;

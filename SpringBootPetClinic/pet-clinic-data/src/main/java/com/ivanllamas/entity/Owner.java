@@ -15,6 +15,7 @@ import javax.persistence.Table;
 public class Owner extends Person {
 
     //owner has a set of pets list of pets, cascade means if you delete an owner, it will delete 'down' the list
+    //if you create a pet and assign it, it will cascade down to the pet entity and create the pet
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
@@ -26,6 +27,20 @@ public class Owner extends Person {
     
     @Column(name = "telephone")
     private String telephone;
+
+    
+    //constructors
+    
+    public Owner() {
+    }
+
+    public Owner(String address, String city, String telephone) {
+        this.address = address;
+        this.city = city;
+        this.telephone = telephone;
+    }
+    
+    
 
     public String getAddress() {
         return this.address;

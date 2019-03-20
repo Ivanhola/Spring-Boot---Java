@@ -11,8 +11,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "specialties")
 public class Specialty extends BaseEntity{
+    
     @Column(name = "description")
     private String description;
+
+    
+    //constructor
+    
+    public Specialty() {
+    }
+
+    
+    
+    public Specialty(String description) {
+        this.description = description;
+    }
+    
+    
     
     public String getDescription() {
         return this.description;
