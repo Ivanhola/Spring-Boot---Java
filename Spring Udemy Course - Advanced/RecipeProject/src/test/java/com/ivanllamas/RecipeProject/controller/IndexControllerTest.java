@@ -9,14 +9,17 @@ import org.junit.Test;
 import org.junit.Before;
 import org.mockito.ArgumentCaptor;
 
-import static org.mockito.ArgumentMatchers.anySet;
 import static org.mockito.ArgumentMatchers.eq;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
+
 
 
 public class IndexControllerTest {
@@ -29,6 +32,9 @@ public class IndexControllerTest {
     
     IndexController controller;
     
+    @Autowired
+    private MockMvc mockMvc;
+    
     @Before
     public void setUp() throws Exception{
         MockitoAnnotations.initMocks(this);
@@ -36,6 +42,21 @@ public class IndexControllerTest {
         controller = new IndexController(recipeService);
     }
 
+    
+    @Test
+    public void MockMVC(){
+        
+        
+        /* this doesnt work for some reason
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("index"));
+
+        */
+    }
+    
     @Test
     public void testMainPage() throws Exception{
         //GIVEN

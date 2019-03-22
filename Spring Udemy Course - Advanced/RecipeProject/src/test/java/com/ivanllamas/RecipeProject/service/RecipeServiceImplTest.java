@@ -47,7 +47,7 @@ public class RecipeServiceImplTest {
         Set<Recipe> recipes = recipeService.getRecipes();
         
         //          expected        actual
-        assertEquals(recipes.size(), 2);
+        assertEquals(1, recipes.size());
         
         //make sure the method find all was called only 1 TIMES
         verify(recipeRepository, times(1)).findAll();
