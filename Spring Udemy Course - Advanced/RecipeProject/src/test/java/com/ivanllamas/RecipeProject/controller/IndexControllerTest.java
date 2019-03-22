@@ -61,11 +61,11 @@ public class IndexControllerTest {
       assertEquals("index",viewName);     
       verify(recipeService, times(1)).getRecipes();
       
-      //verify that the .addAttribute has a 'recipes' string name, and has a set (making sure its a Set of <Recipe>
+      //verify that the .addAttribute has a 'recipes' string name, and has a set (making sure its a Set)
       verify(model,times(1)).addAttribute(eq("recipes"),argumentCaptor.capture());
       
       
-      //create a set, and get the values from the previous set, make sure its the same size
+      //This assures that the Set<Recipe> is returning a Set of Recipes, and not a Set of Strings/anything else
       Set<Recipe> setInController = argumentCaptor.getValue();
         assertEquals(2, setInController.size());
     }
