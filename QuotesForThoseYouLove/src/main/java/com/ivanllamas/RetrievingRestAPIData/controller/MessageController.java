@@ -36,17 +36,22 @@ public class MessageController {
                          HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
                 
                                   //this can return the JSON list, and turn it into objects we can read from our list of Quotes.
-        ResponseEntity<List<MessageURL>> response = restTemplate.exchange(
-             "http://www.foaas.com/operations",
-                     HttpMethod.GET,
-                        entity,
-                        new ParameterizedTypeReference<List<MessageURL>>(){});
+                                 ResponseEntity<List<MessageURL>> response = restTemplate.exchange(
+                                                                                                    "http://www.foaas.com/operations",
+                                    HttpMethod.GET,
+                                    entity,
+                                    new ParameterizedTypeReference<List<MessageURL>>(){});
+        
+                        //get a list of MessageURL objects from the api /operations, it will only read the 'url' values from our entity         
                         List<MessageURL> quotes = response.getBody();
                 
-                int random = new Random().nextInt(quotes.size());
-                
-                String url = quotes.get(random).getUrl();
-                String newURL = url.replaceAll(":from", "your fucking mother");
+                        //random number from 1-list SIZE
+                        int random = new Random().nextInt(quotes.size());
+                        
+                        //getting an object from the list, and then getting the string value using Getter and setting it to this variable
+                        String url = quotes.get(random).getUrl();
+                        //the url has :from values in it, replace it.
+                        String newURL = url.replaceAll(":from", "your fucking mother");
                 
                 
                 
