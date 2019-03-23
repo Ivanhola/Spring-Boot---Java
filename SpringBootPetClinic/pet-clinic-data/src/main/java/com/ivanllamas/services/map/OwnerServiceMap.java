@@ -87,7 +87,8 @@ has a pet we run a method to iterate through the pets, which then checks if the 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return this.findAll().stream().filter(owner -> owner.getLastName()
+                .equalsIgnoreCase(lastName)).findFirst().orElse(null);
     }
 
 
