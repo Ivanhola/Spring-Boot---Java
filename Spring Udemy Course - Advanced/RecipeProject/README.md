@@ -12,7 +12,10 @@
 - [__Controller__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/controller)
 - [__Entity__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/model)
 - [__Repository__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/repository)
-- [__Bootstrap__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/BootStrap);
+- [__Bootstrap__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/BootStrap)
+- [__CommandObjects__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/CommandObjects)
+- [__Converters__](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/Converters)
+
 
 ## Controller Package
 As We've covered in other examples, the Controller takes care of the GET requests and HTTP protocols depending on URL.
@@ -170,4 +173,206 @@ Calling our Repository to upload data into the database
  
  Example of creating a recipe object and pushing it the the database
  
+ Here We create Some Objects, and add them to the recipe class, and then adding the recipe object to a list, which is saved into the repository in the onApplicationEvent() method
+ 
+```Java
+ Optional<UnitOfMeasure> eachUomOptional = unitOfMeasureRepository.findByDescription("Each");
+        
+        //if there is no Description with 'Each' in our database throw exception
+        if(!eachUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        Optional<UnitOfMeasure> tableSpoonUomOptional = unitOfMeasureRepository.findByDescription("Tablespoon");
+        //if there is no Description with 'Tablespoon' in our database throw exception
+        if(!tableSpoonUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        Optional<UnitOfMeasure> teaSpoonUomOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
+        //if there is no Description with 'Teaspoon' in our database throw exception
+        if(!teaSpoonUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        Optional<UnitOfMeasure> dashUomOptional = unitOfMeasureRepository.findByDescription("Dash");
+        //if there is no Description with 'Dash' in our database throw exception
+        if(!dashUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        Optional<UnitOfMeasure> pintUomOptional = unitOfMeasureRepository.findByDescription("Pint");
+        //if there is no Description with 'Pint' in our database throw exception
+        if(!pintUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        Optional<UnitOfMeasure>cupUomOptional = unitOfMeasureRepository.findByDescription("Cup");
+        //if there is no Description with 'Cup' in our database throw exception
+        if(!cupUomOptional.isPresent()){
+            throw new RuntimeException("Expected Unit of Measure not found");
+        }
+        
+        //get UnitOfMeasure from the optionals
+        UnitOfMeasure eachUom = eachUomOptional.get();
+        UnitOfMeasure tableSpoonUom = tableSpoonUomOptional.get();
+        UnitOfMeasure teaSpoonUom = teaSpoonUomOptional.get();
+        UnitOfMeasure dashUom = dashUomOptional.get();
+        UnitOfMeasure pintUom = pintUomOptional.get();
+        UnitOfMeasure cupUom = cupUomOptional.get();
+        
+        //get Categories
+        Optional<Category> americanCategoryOptional = categoryRepository.findByDescription("American");
+        
+        if(!americanCategoryOptional.isPresent()){
+            throw new RuntimeException("Expected Category not found");
+        }
+        
+        Optional<Category> mexicanCategoryOptional = categoryRepository.findByDescription("Mexican");
+        if(!mexicanCategoryOptional.isPresent()){
+            throw new RuntimeException("Expected Category not found");
+        }
+        
+        
+        //get category object from the optionals
+        Category americanCategory = americanCategoryOptional.get();
+        Category mexicanCategory = mexicanCategoryOptional.get();
+        
+        //Guacamole Recipe
+        Recipe guacRecipe = new Recipe();
+        guacRecipe.setDescription("Perfect Guacamole");
+        guacRecipe.setPrepTime(10);
+        guacRecipe.setCookTime(0);
+        guacRecipe.setDifficulty(Difficulty.EASY);
+        guacRecipe.setDirections("1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon" +
+                "\n" +
+                "2 Mash with a fork: Using a fork, roughly mash the avocado. (Don't overdo it! The guacamole should be a little chunky.)" +
+                "\n" +
+                "3 Add salt, lime juice, and the rest: Sprinkle with salt and lime (or lemon) juice. The acid in the lime juice will provide some balance to the richness of the avocado and will help delay the avocados from turning brown.\n" +
+                "Add the chopped onion, cilantro, black pepper, and chiles. Chili peppers vary individually in their hotness. So, start with a half of one chili pepper and add to the guacamole to your desired degree of hotness.\n" +
+                "Remember that much of this is done to taste because of the variability in the fresh ingredients. Start with this recipe and adjust to your taste.\n" +
+                "4 Cover with plastic and chill to store: Place plastic wrap on the surface of the guacamole cover it and to prevent air reaching it. (The oxygen in the air causes oxidation which will turn the guacamole brown.) Refrigerate until ready to serve.\n" +
+                "Chilling tomatoes hurts their flavor, so if you want to add chopped tomato to your guacamole, add it just before serving.\n" +
+                "\n" +
+                "\n" +
+                "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvpiV9Sd");
+        
+        
+        //notes for guacamole
+        Notes guacNotes = new Notes();
+        guacNotes.setRecipeNotes("For a very quick guacamole just take a 1/4 cup of salsa and mix it in with your mashed avocados.\n" +
+                "Feel free to experiment! One classic Mexican guacamole has pomegranate seeds and chunks of peaches in it (a Diana Kennedy favorite). Try guacamole with added pineapple, mango, or strawberries.\n" +
+                "The simplest version of guacamole is just mashed avocados with salt. Don't let the lack of availability of other ingredients stop you from making guacamole.\n" +
+                "To extend a limited supply of avocados, add either sour cream or cottage cheese to your guacamole dip. Purists may be horrified, but so what? It tastes great.\n" +
+                "\n" +
+                "\n" +
+                "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
+        
+        /* *OLD needed for bidirectional, - should be a method call
+        guacRecipe.setNotes(guacNotes);
+        guacNotes.setRecipe(guacRecipe);
+        */
+        
+        //NEW Version
+        guacRecipe.setNotes(guacNotes);
+        
+        
+        guacRecipe.addIngredient(new Ingredient("Ripe Avocado", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("Kosher salt", new BigDecimal(".5"), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("Cilantro", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("freshly grated black pepper", new BigDecimal(2), dashUom));
+        guacRecipe.addIngredient(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), eachUom));
 
+        //Setting our category in our Many to many relationship
+        guacRecipe.getCategories().add(americanCategory);
+        guacRecipe.getCategories().add(mexicanCategory);
+        
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipes");
+        
+        //add to our List variable.
+        recipes.add(guacRecipe);
+```
+
+
+## Command Objects
+
+This is a very simple class, where we simply mimic the __entities__, and turn them into __POJO__, This is useful when using Form Processing/Post Processing, in [this example](https://github.com/Ivanhola/Spring-Framework-Course-Learning/blob/master/Spring%20Udemy%20Course/HibernateDemo/src/main/java/com/ivanllamas/HibernateDemo/StudentController.java) we have an object that is created in thymeleaf, which we then pass on to our controller. __The Difference between CommandObject and Entity__ In this example below, we are using our entity objects to bind data __which isn't good practice__, instead we should be creating __Command Objects__ to mimic the variables from our entity, and binding data to the CommandObject
+
+```HTML
+<!-- The form, creates an object from the model passed in 'studentObj' in the controller.-->
+ <form action="#" th:action="@{processForm}" th:object="${studentObj}" >     
+            First name: <input type="text" th:field="*{firstName}"/> 
+            Last name: <input type="text" th:field="*{lastName}"/>
+            Email: <input type="text" th:field="*{email}"/>
+            <input type="submit"/>
+```
+
+Here the model attribute 'studentObj' is passed in, and the data is binded to a tempStudent object/entity, which is then used to upload the object to the database.
+```Java
+@RequestMapping("/processForm")
+    public String processForm(@ModelAttribute("studentObj") Student tempStudent){
+        Student student = new Student(tempStudent.getFirstName(), tempStudent.getLastName(), tempStudent.getEmail());
+        System.out.println("Adding student to our database.." + student.toString());
+
+        service.add(student);
+        
+        System.out.println("Uploaded to database!");
+        
+        return "form-processed";
+```
+
+### Command Object Example 
+
+Here We simply create the same variables and types as it is in our entity, we then use [Converters](https://github.com/Ivanhola/Spring-Framework-Course-Learning/tree/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/Converters) to convert the NotesCommand object into a __Notes__ entity.
+```Java
+
+public class NotesCommand {
+
+    private Long id;
+    private RecipeCommand recipeCommand;
+    private String recipeNotes;
+
+    
+    /*No-Arg Constructor*/
+    public NotesCommand() {
+    }
+    
+    /*Getters and Setter*/
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    . . .
+```
+
+## Converters
+
+Here We are simply taking the [NotesCommand](https://github.com/Ivanhola/Spring-Framework-Course-Learning/blob/master/Spring%20Udemy%20Course%20-%20Advanced/RecipeProject/src/main/java/com/ivanllamas/RecipeProject/CommandObjects/NotesCommand.java) object, taking the variables, and adding those values to the __Notes__ object, and we __do the same__ for every Converter Object in this package.
+```Java
+@Component
+public class NotesCommandToNotes implements Converter<NotesCommand, Notes>{
+
+    @Nullable
+    @Override
+    public Notes convert(NotesCommand source) {
+    if(source == null){
+        return null;
+    }    
+    
+    final Notes notes = new Notes();
+    notes.setId(source.getId());
+    notes.setRecipeNotes(source.getRecipeNotes());
+    return notes;
+    }
+}
+
+```
