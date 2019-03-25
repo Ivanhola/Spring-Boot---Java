@@ -1,5 +1,6 @@
 package com.ivanllamas.RecipeProject.service;
 
+import com.ivanllamas.RecipeProject.CommandObjects.RecipeCommand;
 import com.ivanllamas.RecipeProject.model.Recipe;
 import java.util.Set;
 
@@ -13,4 +14,5 @@ public interface RecipeService {
     
     Recipe findById(Long l);
     
+    RecipeCommand saveRecipeCommand(RecipeCommand command);
 }

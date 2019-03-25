@@ -27,7 +27,7 @@ public class RecipeServiceImplTest {
         MockitoAnnotations.initMocks(this);
         
         //how it would be injected by spring
-        recipeService = new RecipeServiceImpl(recipeRepository);
+      //  recipeService = new RecipeServiceImpl(recipeRepository);
    }
 
     @Test

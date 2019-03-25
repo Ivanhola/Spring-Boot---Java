@@ -1,6 +1,9 @@
 
 package com.ivanllamas.RecipeProject.service;
 
+import com.ivanllamas.RecipeProject.CommandObjects.RecipeCommand;
+import com.ivanllamas.RecipeProject.Converters.RecipeCommandToRecipe;
+import com.ivanllamas.RecipeProject.Converters.RecipeToRecipeCommand;
 import com.ivanllamas.RecipeProject.model.Recipe;
 import com.ivanllamas.RecipeProject.repository.RecipeRepository;
 import java.util.HashSet;
@@ -8,15 +11,22 @@ import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class RecipeServiceImpl implements RecipeService{
 
     private final RecipeRepository recipeRepository;
+    
+    //command objects
+    private final RecipeCommandToRecipe recipeCommandToRecipe;
+    private final RecipeToRecipeCommand recipeToRecipeCommand;
 
     @Autowired
-    public RecipeServiceImpl(RecipeRepository recipeRepository) {
+    public RecipeServiceImpl(RecipeRepository recipeRepository, RecipeCommandToRecipe recipeCommandToRecipe, RecipeToRecipeCommand recipeToRecipeCommand) {
         this.recipeRepository = recipeRepository;
+        this.recipeCommandToRecipe = recipeCommandToRecipe;
+        this.recipeToRecipeCommand = recipeToRecipeCommand;
     }
     
     
@@ -37,6 +47,17 @@ public class RecipeServiceImpl implements RecipeService{
             throw new RuntimeException("Recipe not found");
         }
         
+    }
+
+    //pass in a command object, and turn it into a Recipe object.
+    @Override
+    @Transactional
+    public RecipeCommand saveRecipeCommand(RecipeCommand command) {
+        Recipe detachedRecipe = recipeCommandToRecipe.convert(command);
+        //save the recipe into the database
+        Recipe savedRecipe = recipeRepository.save(detachedRecipe);
+        //return a recipeCommand POJO(this will be used to view things on webpage)
+        return recipeToRecipeCommand.convert(savedRecipe);
     }
 
 

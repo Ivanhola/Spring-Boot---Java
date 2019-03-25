@@ -153,9 +153,11 @@ public class Recipe {
     }
 
     public void setNotes(Notes notes) {
+        if(notes != null){
         this.notes = notes;
         //convenience to set Recipe
         notes.setRecipe(this);
+        }
     }
     
     //method for adding ingredient to our recipe
