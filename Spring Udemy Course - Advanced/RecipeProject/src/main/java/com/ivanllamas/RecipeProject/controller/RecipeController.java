@@ -40,6 +40,13 @@ public class RecipeController {
         return "recipe/recipeForm";
     }
     
+    @RequestMapping("/recipe/update/{id}")
+    public String updateRecipe(@PathVariable String id, Model model){
+        model.addAttribute("recipe", recipeService.findCommandById(new Long(id)));
+        
+        return "recipe/recipeForm";
+    }
+    
     
     //binds the modelattribute data to recipeCommand
     @PostMapping("recipe")

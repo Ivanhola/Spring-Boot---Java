@@ -60,5 +60,13 @@ public class RecipeServiceImpl implements RecipeService{
         return recipeToRecipeCommand.convert(savedRecipe);
     }
 
+    //Used to update recipes, returns a recipe command by converting a recipe entity
+    @Override
+    @Transactional
+    public RecipeCommand findCommandById(Long l) {
+       return recipeToRecipeCommand.convert(findById(l));
+    }
+
+    
 
 }
