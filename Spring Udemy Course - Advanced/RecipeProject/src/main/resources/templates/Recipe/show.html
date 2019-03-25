@@ -21,11 +21,15 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="pannel-group">
+                 <!-- Panel-->
                 <div class="panel panel-primary">
+                    <!-- Heading for our Recipe takes in model:attribute:'recipe'-->
                     <div class="panel-heading">
                         <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
                     </div>
+                    
                     <div class="panel-body">
+                        <!-- Row for categories -->
                         <div class="row">
                             <div class="col-md-3">
                                 <h5>Categories:</h5>
@@ -39,6 +43,8 @@
                                 </ul>
                             </div>
                         </div>
+                        
+                        <!-- Row for prepTime and difficulty-->
                         <div class="row">
                             <div class="col-md-3">
                                 <h5>Prep Time:</h5>
@@ -53,6 +59,8 @@
                                 <p th:text="${recipe.difficulty}">Easy</p>
                             </div>
                         </div>
+                        
+                         <!-- Row For CookTime and servings-->
                         <div class="row">
                             <div class="col-md-3">
                                 <h5>Cooktime:</h5>
@@ -67,6 +75,8 @@
                                 <p th:text="${recipe.servings}">4</p>
                             </div>
                         </div>
+                        
+                         <!-- Row for source and Url-->
                         <div class="row">
                             <div class="col-md-3">
                                 <h5>Source:</h5>
@@ -81,8 +91,10 @@
                                 <p th:text="${recipe.url}">http://www.example.com</p>
                             </div>
                         </div>
-                    </div>
+                        
+                    </div>   
                 </div>
+                
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h1 class="panel-title" >Ingredients</h1>
@@ -101,6 +113,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h1 class="panel-title" >Directions</h1>
@@ -113,6 +126,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h1 class="panel-title" >Notes</h1>
@@ -125,6 +139,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
