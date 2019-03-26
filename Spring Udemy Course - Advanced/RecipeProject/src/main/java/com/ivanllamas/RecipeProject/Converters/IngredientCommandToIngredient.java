@@ -3,6 +3,7 @@ package com.ivanllamas.RecipeProject.Converters;
 
 import com.ivanllamas.RecipeProject.CommandObjects.IngredientCommand;
 import com.ivanllamas.RecipeProject.model.Ingredient;
+import com.ivanllamas.RecipeProject.model.Recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
@@ -28,9 +29,16 @@ public class IngredientCommandToIngredient implements Converter<IngredientComman
          if(source == null){
              return null;
          }
+         
          final Ingredient ingredient = new Ingredient();
          ingredient.setId(source.getId());
          ingredient.setAmount(source.getAmount());
+         if(source.getRecipeId() != null){
+            Recipe recipe = new Recipe();
+            recipe.setId(source.getRecipeId());
+            ingredient.setRecipe(recipe);
+            recipe.addIngredient(ingredient);
+        }
          ingredient.setDescription(source.getDescription());
          //returns a UnitOfMeasureCommand object, and converts it into a UnitOfMeasure entity with Convert() method
          ingredient.setUom(uomConverter.convert(source.getUnitOfMeasureCommand()));
