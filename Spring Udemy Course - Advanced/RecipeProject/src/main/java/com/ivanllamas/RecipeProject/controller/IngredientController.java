@@ -29,7 +29,8 @@ public class IngredientController {
         this.unitOfMeasureService = unitOfMeasureService;
     }
     
-    /*GET MAPPING TO SHOW THE LIST OF INGREDIENTS IN A RECIPE*/
+    /*GET MAPPING TO SHOW THE LIST OF INGREDIENTS IN A RECIPE triggered in /recipe/recipeForm.html*/
+    
     @RequestMapping("/recipe/ingredients/{recipeId}")
     public String listIngredients(@PathVariable String recipeId, Model model){
         
@@ -40,6 +41,7 @@ public class IngredientController {
     }
     
     /*GET MAPPING TO CREATE A NEW INGREDIENT/RECIPE*/
+    
     @RequestMapping("/recipe/ingredients/new/{recipeId}")
     public String newRecipe(@PathVariable String recipeId, Model model){
         //recipe command by id
@@ -56,7 +58,8 @@ public class IngredientController {
         return "recipe/ingredients/ingredientForm";
     }
     
-    /*GET MAPPING TO SHOW THE INDIVIDUAL INGREDIENT ITEM */
+    /*GET MAPPING TO SHOW THE INDIVIDUAL INGREDIENT ITEM triggered by <a> in /ingredients/list.html*/
+    
     //when this mapping is requested, it will display an individual ingredient based on the ID of the recipe/ingredient
     @RequestMapping("/recipe/{recipeId}/ingredients/{id}/show")
     public String showRecipeIngredient(@PathVariable String recipeId, @PathVariable String id, Model model){
@@ -65,7 +68,8 @@ public class IngredientController {
         return "recipe/ingredients/show";
     }
     
-    /*GET MAPPING TO UPDATE AN INDIVIDUAL UNIT OF MEASURE IN OUR INGREDIENT RETURNS FORM*/
+    /*GET MAPPING TO UPDATE AN INDIVIDUAL UNIT OF MEASURE IN OUR INGREDIENT RETURNS FORM triggered in /ingredients/list.html*/
+    
     @RequestMapping("/recipe/{recipeId}/ingredients/{id}/update")
     public String updateRecipeIngredient(@PathVariable String recipeId,@PathVariable String id, Model model){
         //returns an ingredient command
@@ -77,12 +81,25 @@ public class IngredientController {
         
     }
     
-    /*POST MAPPING TO ACCEPT OUR FORM DATA*/
+    /*POST MAPPING TO ACCEPT OUR FORM DATA trigged in update/create*/
+    
     @PostMapping("/recipe/{recipeId}/ingredient")
     public String saveOrUpdate(@ModelAttribute IngredientCommand commandPassedIn){
         IngredientCommand savedCommand = ingredientService.saveIngredientCommand(commandPassedIn);
         //redirects to /recipe/{recipeId}/ingredients/{ingredientId}/show which is the individual ingredient item
         return "redirect:/recipe/" + savedCommand.getRecipeId() + "/ingredients/" + savedCommand.getId() + "/show/";
+    }
+    
+    
+    /*GET MAPPING TO DELETE AN INGREDIENT triggered in /ingredients/list.html*/
+    
+    @RequestMapping("/recipe/{recipeId}/ingredients/{id}/delete")
+    public String deleteIngredient(@PathVariable String recipeId, @PathVariable String id){
+        
+        ingredientService.deleteById(new Long(recipeId), new Long(id));
+        //return the list of ingredients for that recipe
+        return "redirect:/recipe/ingredients/" + recipeId ;
+        
     }
     
     
