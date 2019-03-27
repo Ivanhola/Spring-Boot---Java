@@ -25,7 +25,16 @@
                 <div class="panel panel-primary">
                     <!-- Heading for our Recipe takes in model:attribute:'recipe'-->
                     <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-3">
                         <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
+                        </div>
+                            
+                            <div class="col-md-1">
+                                <a class="btn btn-default" href="#" th:href="@{'/recipe/image/' + ${recipe.id}}"
+                                   role="button">Change Image</a>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="panel-body">
@@ -41,6 +50,10 @@
                                     <!-- for each category in Category(entity/object set -> category.getDescription())-->
                                     <li th:each="category : ${recipe.categories}" th:text="${category.description}">cat three</li>
                                 </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../../static/images/guacamole400x400WithX.jpg" th:src="@{/images/guacamole400x400WithX.jpg}"
+                                     width="200" height="200">
                             </div>
                         </div>
                         
