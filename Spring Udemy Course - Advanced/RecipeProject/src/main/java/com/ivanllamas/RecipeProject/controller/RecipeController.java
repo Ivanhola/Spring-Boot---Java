@@ -21,7 +21,7 @@ public class RecipeController {
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
-    
+    /*GET MAPPING TO DISPLAY A SINGLE RECIPE ITEM AND ALL ITS CONTENTS*/
     //when a variable is passed in the URL, it will return a view with the Recipe object
     //with that id from our database.
     @RequestMapping("/recipe/show/{id}")
@@ -33,6 +33,7 @@ public class RecipeController {
         
     }
     
+    /*GET MAPPING TO DISPLAY THE FORM/CREATE A NEW RECIPE*/
     @RequestMapping("/recipe/new")
     public String newRecipe(Model model){
         model.addAttribute("recipe", new RecipeCommand());
@@ -40,6 +41,7 @@ public class RecipeController {
         return "recipe/recipeForm";
     }
     
+    /*GET MAPPING TO UPDATE AN EXISTING RECIPE, BY PASSING THE ID IN*/
     @RequestMapping("/recipe/update/{id}")
     public String updateRecipe(@PathVariable String id, Model model){
         model.addAttribute("recipe", recipeService.findCommandById(new Long(id)));
@@ -47,6 +49,7 @@ public class RecipeController {
         return "recipe/recipeForm";
     }
     
+    /*GET MAPPING TO DELETE AN EXISTING RECIPE OBJECT*/
     @RequestMapping("/recipe/delete/{id}")
     public String deleteRecipe(@PathVariable String id){
         recipeService.deleteById(new Long(id));
@@ -54,7 +57,7 @@ public class RecipeController {
         return "redirect:/";
     }
     
-    
+    /*POST MAPPING TO SAVE THE FORM DATA IN OUR UPDATE/CREATE*/
     //binds the modelattribute data to recipeCommand
     @PostMapping("recipe")
     public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand){

@@ -2,6 +2,8 @@
 package com.ivanllamas.RecipeProject.controller;
 
 import com.ivanllamas.RecipeProject.CommandObjects.IngredientCommand;
+import com.ivanllamas.RecipeProject.CommandObjects.RecipeCommand;
+import com.ivanllamas.RecipeProject.CommandObjects.UnitOfMeasureCommand;
 import com.ivanllamas.RecipeProject.service.IngredientService;
 import com.ivanllamas.RecipeProject.service.RecipeService;
 import com.ivanllamas.RecipeProject.service.UnitOfMeasureService;
@@ -37,8 +39,25 @@ public class IngredientController {
         return "recipe/ingredients/list";
     }
     
+    /*GET MAPPING TO CREATE A NEW INGREDIENT/RECIPE*/
+    @RequestMapping("/recipe/ingredients/new/{recipeId}")
+    public String newRecipe(@PathVariable String recipeId, Model model){
+        //recipe command by id
+        RecipeCommand recipeCommand = recipeService.findCommandById(new Long(recipeId));
+        
+        IngredientCommand ingredientCommand = new IngredientCommand();
+        ingredientCommand.setRecipeId(new Long(recipeId));
+        model.addAttribute("ingredient", ingredientCommand);
+        
+        ingredientCommand.setUnitOfMeasureCommand(new UnitOfMeasureCommand());
+        
+        model.addAttribute("unitOfMeasureCommandList", unitOfMeasureService.listAllUoms());
+        
+        return "recipe/ingredients/ingredientForm";
+    }
+    
     /*GET MAPPING TO SHOW THE INDIVIDUAL INGREDIENT ITEM */
-    //gets the recipe id, and then gets the Id value of the ingredient to display individually
+    //when this mapping is requested, it will display an individual ingredient based on the ID of the recipe/ingredient
     @RequestMapping("/recipe/{recipeId}/ingredients/{id}/show")
     public String showRecipeIngredient(@PathVariable String recipeId, @PathVariable String id, Model model){
         //returns an ingredient command
