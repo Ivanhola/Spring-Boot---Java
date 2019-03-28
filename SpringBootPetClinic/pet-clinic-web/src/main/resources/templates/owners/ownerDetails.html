@@ -8,7 +8,7 @@
   
     <h2>Owner Information</h2>
   
-  
+    <!-- th:object calls the getters and setters for our model attribute -->
     <table class="table table-striped" th:object="${owner}">
       <tr>
         <th>Name</th>
@@ -16,7 +16,9 @@
       </tr>
       <tr>
         <th>Address</th>
-        <td th:text="*{address}" /></td>
+        <!-- Showing the difference between ${} and *{}, ${} interacts with the model and its variable values
+        while *{} calls the th:object and displays based on its getters and setters-->
+        <td th:text="${owner.address}" /></td>
       </tr>
       <tr>
         <th>City</th>
