@@ -14,6 +14,7 @@ public class RecipeCommand {
     private Integer cookTime;
     private Integer servings;
     private String source;
+    private Byte[] image;
     private String url;
     private String directions;
     private Set<IngredientCommand> ingredients = new HashSet<>();
@@ -124,6 +125,15 @@ public class RecipeCommand {
     public void setNotes(NotesCommand notes) {
         this.notes = notes;
     }
+
+    public Byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(Byte[] image) {
+        this.image = image;
+    }
+    
     
     
     

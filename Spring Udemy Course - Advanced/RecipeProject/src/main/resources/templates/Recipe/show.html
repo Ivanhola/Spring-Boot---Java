@@ -52,7 +52,8 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <img src="../../static/images/guacamole400x400WithX.jpg" th:src="@{/images/guacamole400x400WithX.jpg}"
+                                <!-- th:src = the response in Ingredient Controller--> 
+                                <img src="../../static/images/guacamole400x400WithX.jpg" th:src="@{'/recipe/recipeimage/' + ${recipe.id}}"
                                      width="200" height="200">
                             </div>
                         </div>
