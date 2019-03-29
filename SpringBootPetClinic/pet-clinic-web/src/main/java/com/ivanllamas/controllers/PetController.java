@@ -60,19 +60,22 @@ public class PetController {
     public String initCreationForm(Owner owner, Model model) {
         Pet pet = new Pet();
         owner.getPets().add(pet);
+        pet.setOwner(owner); 
         model.addAttribute("pet", pet);
         return "/pets/createOrUpdatePetForm";
     }
 
     /*POST MAPPING HANDLE THE REQUEST FROM ABOVE*/
     @PostMapping("/pets/new")
-    public String processCreationForm(Owner owner, @Valid Pet pet, BindingResult result, ModelMap model) {
+    public String processCreationForm(Owner owner, @Valid Pet pet, BindingResult result, Model model) {
         if (StringUtils.hasLength(pet.getName()) && pet.isNew() && owner.getPet(pet.getName(), true) != null){
             result.rejectValue("name", "duplicate", "already exists");
         }
-        owner.getPets().add(pet);
+        owner.getPets().add(pet); 
+        pet.setOwner(owner); //adds the pet to the owner
+        
         if (result.hasErrors()) {
-            model.put("pet", pet);
+            model.addAttribute("pet", pet);
             return "/pets/createOrUpdatePetForm";
         } else {
             petService.save(pet);
@@ -88,14 +91,19 @@ public class PetController {
         return "/pets/createOrUpdatePetForm";
     }
 
+    
+    //todo fix detached entity
     @PostMapping("/pets/{petId}/edit")
-    public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, ModelMap model) {
+    public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
+  
         if (result.hasErrors()) {
             pet.setOwner(owner);
-            model.put("pet", pet);
+            
+            model.addAttribute("pet", pet);
             return "/pets/createOrUpdatePetForm";
         } else {
             owner.getPets().add(pet);
+            pet.setOwner(owner);
             petService.save(pet);
             return "redirect:/owners/" + owner.getId();
         }
