@@ -7,6 +7,7 @@ import com.ivanllamas.repository.PetRepository;
 import com.ivanllamas.repository.PetTypeRepository;
 import com.ivanllamas.services.OwnerService;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,11 @@ public class OwnerSDJpaService implements OwnerService{
     @Override
     public void deleteById(Long id) {
         ownerRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
     }
 
 }

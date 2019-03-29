@@ -7,6 +7,7 @@ import com.ivanllamas.services.CrudService;
 import com.ivanllamas.services.OwnerService;
 import com.ivanllamas.services.PetService;
 import com.ivanllamas.services.PetTypeService;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import org.springframework.context.annotation.Profile;
 
 @Service
 @Profile({"default","map"})
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
+    public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
     //used to check 
     private final PetTypeService petTypeService;
@@ -89,6 +90,11 @@ has a pet we run a method to iterate through the pets, which then checks if the 
     public Owner findByLastName(String lastName) {
         return this.findAll().stream().filter(owner -> owner.getLastName()
                 .equalsIgnoreCase(lastName)).findFirst().orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 
