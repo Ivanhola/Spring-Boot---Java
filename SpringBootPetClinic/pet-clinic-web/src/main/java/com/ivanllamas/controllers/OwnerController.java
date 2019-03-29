@@ -64,7 +64,7 @@ public class OwnerController {
         }
         
         //find owners by last name
-        List<Owner> results = ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = ownerService.findAllByLastNameLike("%" + owner.getLastName() + "%");
         if(results.isEmpty()){
             // no owners with last name found
             result.rejectValue("lastName", "NotFound","NotFound");
@@ -76,7 +76,7 @@ public class OwnerController {
         }else{
             //multiple owners found
             model.addAttribute("selections", results);
-            return "/owners/ownerList";
+            return "/owners/ownersList";
         }
         
        
