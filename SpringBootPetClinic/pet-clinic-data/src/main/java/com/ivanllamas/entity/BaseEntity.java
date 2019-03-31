@@ -37,6 +37,7 @@ public class BaseEntity implements Serializable{
     //method used to check if the OWner/person/entity is new
     
     public boolean isNew(){
+        //if id is null return false as in not new
         return this.id == null;
     }
     

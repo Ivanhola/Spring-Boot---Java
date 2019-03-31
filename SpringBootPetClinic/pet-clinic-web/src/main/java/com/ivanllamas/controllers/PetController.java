@@ -97,12 +97,13 @@ public class PetController {
     public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, Model model) {
   
         if (result.hasErrors()) {
-            pet.setOwner(owner);
+            //pet.setOwner(owner);
             
             model.addAttribute("pet", pet);
             return "/pets/createOrUpdatePetForm";
         } else {
-            owner.getPets().add(pet);
+            /*
+            owner.getPets().add(pet);*/
             pet.setOwner(owner);
             petService.save(pet);
             return "redirect:/owners/" + owner.getId();
