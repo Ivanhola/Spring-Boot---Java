@@ -4,6 +4,7 @@ package com.ivanllamas.RecipeProject.service;
 import com.ivanllamas.RecipeProject.CommandObjects.RecipeCommand;
 import com.ivanllamas.RecipeProject.Converters.RecipeCommandToRecipe;
 import com.ivanllamas.RecipeProject.Converters.RecipeToRecipeCommand;
+import com.ivanllamas.RecipeProject.Exceptions.NotFoundException;
 import com.ivanllamas.RecipeProject.model.Recipe;
 import com.ivanllamas.RecipeProject.repository.RecipeRepository;
 import java.util.HashSet;
@@ -44,7 +45,8 @@ public class RecipeServiceImpl implements RecipeService{
         if(recipeOptional.isPresent()){
             return recipeOptional.get();
         }else{
-            throw new RuntimeException("Recipe not found");
+            //response status exception notFOUND
+            throw new NotFoundException("Recipe not found");
         }
         
     }
