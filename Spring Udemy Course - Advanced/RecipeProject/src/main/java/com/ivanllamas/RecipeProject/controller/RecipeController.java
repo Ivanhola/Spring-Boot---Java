@@ -94,20 +94,5 @@ public class RecipeController {
          return modelAndView;
     }
     
-    // 400 ERROR BAD REQUEST
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(NumberFormatException.class)
-    public ModelAndView handleNumberFormat(Exception exception){
 
-         System.err.println("Handling Number Format Exception");
-         System.err.println(exception.getMessage());
-
-         ModelAndView modelAndView = new ModelAndView();
-
-         modelAndView.setViewName("400Error");
-         //adding model attr to 404 error.html
-         modelAndView.addObject("exception", exception);
-
-         return modelAndView;
-    }
 }
