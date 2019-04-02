@@ -5,10 +5,12 @@ import com.ivanllamas.RecipeProject.CommandObjects.RecipeCommand;
 import com.ivanllamas.RecipeProject.Exceptions.NotFoundException;
 import com.ivanllamas.RecipeProject.service.RecipeService;
 import static java.lang.StrictMath.log;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,9 +66,19 @@ public class RecipeController {
     }
     
     /*POST MAPPING TO SAVE THE FORM DATA IN OUR UPDATE/CREATE*/
-    //binds the modelattribute data to recipeCommand
+    
     @PostMapping("recipe")
-    public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand){
+    public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand recipeCommand, BindingResult bindingResult){
+        
+        //if validation doesnt pass, return to the form
+        if(bindingResult.hasErrors()){
+            
+            bindingResult.getAllErrors().forEach(objectError -> {
+                System.err.println(objectError.toString());
+            });
+            return "recipe/recipeForm";
+        }
+        
         //save the command to the database
         RecipeCommand savedCommand = recipeService.saveRecipeCommand(recipeCommand);
         
