@@ -46,7 +46,7 @@ public class RecipeServiceImpl implements RecipeService{
             return recipeOptional.get();
         }else{
             //response status exception notFOUND
-            throw new NotFoundException("Recipe not found");
+            throw new NotFoundException("Recipe not found, ID = " + l.toString());
         }
         
     }
