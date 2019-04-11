@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" th:href="@{/css/modal.css}"/>
+        <link rel="stylesheet" href="../static/CSS/modal.css">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     </head>
@@ -16,11 +17,9 @@
             <span class="close"><i class="fas fa-times"></i></span>
 
             <div class="modal-content">
-
-
                 <div class="modal-text">
-                <span th:text="${message.message}" style="color:red; font-size: 400%; width: 100%;"/>
-
+                <span th:text="${message.message}" style=" font-size: 400%;"/>
+                <span>test</span>
 
                 </div>
 

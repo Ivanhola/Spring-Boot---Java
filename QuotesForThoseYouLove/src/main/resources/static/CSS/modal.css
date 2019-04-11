@@ -36,28 +36,26 @@
 /* Modal Content Grid style content, contains 2 columns 0 Rows (image) */
 .modal-content {
   margin: auto;
-  display: grid;
+
   background: white;
-  /*Height and Width of our Grid (best practice is using grid-template-columns and rows for size of grid
-  however we have no rows, can set the size ourselves)*/
+  padding: 0;
   height: 65%;
   width: 70%;
 
-  grid-template-rows: 1.3fr;
 
 
-  /*max-width: 700px;*/
+
 }
 
 
 
-/*Right side text*/
+
 .modal-text{
-  align-self: start;
-  margin: 20% 0;
-  background: blue;
-  color: red;
+
+  background: red;
+  color: black;
 }
+
 
 
 
