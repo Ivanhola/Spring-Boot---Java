@@ -7,11 +7,37 @@
     </head>
     <body>
         <form th:object="${movie}" th:action="@{/movie/movie}" method="post">
-             <input type="text" th:field="*{title}"/>
-             <br>
-             <input type="text" th:field="*{description}"/>
-             <br>
-             <button type="submit">Submit</button>
+             <input type="text" th:field="*{title}" placeholder="title"/>
+             <input type="text" th:field="*{description}" placeholder="description"/>
+             <button type="submit">+</button>
         </form>
+        <br>
+                <div class="movie-table" th:if="${not #lists.isEmpty(movielist)}">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <!-- The th:remove will remove the template engine from the HTML, making it only HTML-->
+                            <tr th:remove="all">
+                                <td>123</td>
+                                <td>Tasty Goodnees 1</td>
+                                <td><a>View</a></td>
+                            </tr>
+                            <!-- Displays the regular data from out model attribute {recipes} and iterates through. -->
+                            <tr th:each="movie : ${movielist}">
+                                <td th:text="${movie.id}">id</td>
+                                <!--<td th:text="${recipe.notes.recipeNotes}">Tasty Goodnees 3</td>-->
+                                <td th:text="${movie.title}">title</td>
+                                <td th:text="${movie.description}">description</td>
+                                <td><a href="#" th:href="@{'/movie/show/' + ${movie.id}}">View</a></td>
+                                <td><a href="#" th:href="@{'/movie/update/' + ${movie.id}}">Update</a></td>
+                                <td><a href="#" th:href="@{'/movie/delete/' + ${movie.id}}">Delete</a></td>
+                            </tr>
+                        </table>
+                    </div>
     </body>
 </html>
