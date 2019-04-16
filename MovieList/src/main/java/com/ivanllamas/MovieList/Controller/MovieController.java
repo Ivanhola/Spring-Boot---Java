@@ -39,8 +39,13 @@ public class MovieController {
         return "redirect:/movie/form";
     }
     
+    @RequestMapping("/update/{id}")
+    public String updateMovie(@PathVariable Long id){
+        return "redirect:/movie/form";
+    }
+    
     @RequestMapping("/delete/{id}")
-    public String deleteMovie(@PathVariable Long id, Model model){
+    public String deleteMovie(@PathVariable Long id){
         movieService.deleteById(id);
         return "redirect:/movie/form";
     }
