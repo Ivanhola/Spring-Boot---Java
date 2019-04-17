@@ -40,8 +40,10 @@ public class MovieController {
     }
     
     @RequestMapping("/update/{id}")
-    public String updateMovie(@PathVariable Long id){
-        return "redirect:/movie/form";
+    public String updateMovie(@PathVariable Long id, Model model, Model listModel){
+        model.addAttribute("movie", movieService.findById(id));
+        listModel.addAttribute("movielist", movieService.getMovies());
+        return "MovieForm";
     }
     
     @RequestMapping("/delete/{id}")
