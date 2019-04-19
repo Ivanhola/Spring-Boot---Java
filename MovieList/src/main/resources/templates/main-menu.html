@@ -4,10 +4,17 @@
         <title>List Menu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{mainMenu.css}">
+        <link rel="stylesheet" href="../static/mainMenu.css">
     </head>
     <body>
-        <div>
-            <a href="#" th:href="@{/movie/form}">List Of Movies</a>
+        
+        <div class="movieLink">
+            <div class="movies">
+            <a href="#" th:href="@{/movie/form}">List Of Movies
+            <span class="link-spanner"></span>
+            </a>
+            </div>
         </div>
     </body>
 </html>
