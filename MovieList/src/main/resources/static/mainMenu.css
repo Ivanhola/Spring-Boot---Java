@@ -6,13 +6,24 @@
   
   body,html{
  
+    background: #05A8AA;
     height: 100%;
     width: 100%;
   
   
   }
 
+  .movie-container{
+    background: black;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+
   .movieLink{
+
       position: relative;
       background: red;
       text-align: center;
