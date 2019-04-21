@@ -1,7 +1,7 @@
 
 package com.ivanllamas.YoutubeVideoViewer.entity;
 
-
+//We will return a video url, title, thumbnail link and description
 public class YoutubeVideo {
 
     private String url;
