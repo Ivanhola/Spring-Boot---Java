@@ -24,10 +24,10 @@
                             </tr>
                             <!-- Displays the regular data from out model attribute {recipes} and iterates through. -->
                             <tr th:each="video : ${list}">
-                                <td th:text="${video.url}">url</td>
+                                <td><a th:href="${video.url}" th:text="${video.url}"></a></td>
                                 <!--<td th:text="${recipe.notes.recipeNotes}">Tasty Goodnees 3</td>-->
                                 <td th:text="${video.title}">title</td>
-                                <td th:text="${video.thumbnail}">thumbnail</td>
+                                <td><img th:src="${video.thumbnail}" alt=""></td>
                                 <td th:text="${video.description}">description</td>
                             </tr>
                         </table>

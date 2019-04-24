@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form th:object="${search}" th:action="@{/search}" method="post">
+        <form th:object="${search}" th:action="@{/search}" method="get">
              <input type="text" th:field="*{searchItem}" placeholder="Video"/>
              <button type="submit">Search</button>
         </form>

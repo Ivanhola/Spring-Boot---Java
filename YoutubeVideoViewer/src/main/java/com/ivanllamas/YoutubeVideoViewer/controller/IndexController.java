@@ -32,8 +32,8 @@ public class IndexController {
         return "home";
     }
     
-    @PostMapping("/search")
-    public String searchProcessed(@ModelAttribute("search") ItemToSearch searched, Model model)
+    @RequestMapping("/search")
+    public String searchProcessed(@ModelAttribute("search")ItemToSearch searched, Model model)
     throws GeneralSecurityException, IOException, GoogleJsonResponseException{
         
         model.addAttribute("list",youtubeService.searchVideos(searched.getSearchItem()));

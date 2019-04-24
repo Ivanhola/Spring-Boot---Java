@@ -23,7 +23,7 @@ import org.springframework.stereotype.Service;
 public class YoutubeService {
  // You need to set this value for your code to compile.
     // For example: ... DEVELOPER_KEY = "YOUR ACTUAL KEY";
-    public static final String DEVELOPER_KEY = "AIzaSyD_JOjza3z3LGf24KbiXpPLkMiDkYTm27k";
+    public static final String DEVELOPER_KEY = "AIzaSyD_JOjza3z3LGf24KbiXpPLkMiDkYTm27k1233213231";
     public static final String VIDEO_URL = "https://www.youtube.com/watch?v=";
     private static final String APPLICATION_NAME = "API code samples";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
@@ -68,7 +68,7 @@ public class YoutubeService {
             vids.add(vid);
         }
         
-        System.out.println(vids.toString());
+        //System.out.println(vids.toString());
         
         return vids;
         
