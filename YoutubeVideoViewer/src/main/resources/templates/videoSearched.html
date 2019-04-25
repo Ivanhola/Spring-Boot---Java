@@ -18,17 +18,18 @@
                             </thead>
                             <!-- The th:remove will remove the template engine from the HTML, making it only HTML-->
                             <tr th:remove="all">
-                                <td>123</td>
-                                <td>Tasty Goodnees 1</td>
-                                <td><a>View</a></td>
+                                <td>youtube.com</td>
+                                <td>video title</td>
+                                <td>video thumbnail</td>
+                                <td>video description</td>
                             </tr>
                             <!-- Displays the regular data from out model attribute {recipes} and iterates through. -->
                             <tr th:each="video : ${list}">
                                 <td><a th:href="${video.url}" th:text="${video.url}"></a></td>
                                 <!--<td th:text="${recipe.notes.recipeNotes}">Tasty Goodnees 3</td>-->
-                                <td th:text="${video.title}">title</td>
+                                <td th:text="${video.title}"></td>
                                 <td><img th:src="${video.thumbnail}" alt=""></td>
-                                <td th:text="${video.description}">description</td>
+                                <td th:text="${video.description}"></td>
                             </tr>
                         </table>
                     </div>

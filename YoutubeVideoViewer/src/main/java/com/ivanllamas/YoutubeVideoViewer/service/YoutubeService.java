@@ -11,6 +11,8 @@ import com.google.api.services.youtube.YouTube;
 
 import com.google.api.services.youtube.model.SearchListResponse;
 import com.google.api.services.youtube.model.SearchResult;
+import com.google.api.services.youtube.model.Video;
+import com.google.api.services.youtube.model.VideoListResponse;
 import com.ivanllamas.YoutubeVideoViewer.entity.YoutubeVideo;
 
 import java.io.IOException;
@@ -23,7 +25,7 @@ import org.springframework.stereotype.Service;
 public class YoutubeService {
  // You need to set this value for your code to compile.
     // For example: ... DEVELOPER_KEY = "YOUR ACTUAL KEY";
-    public static final String DEVELOPER_KEY = "AIzaSyD_JOjza3z3LGf24KbiXpPLkMiDkYTm27k1233213231";
+    public static final String DEVELOPER_KEY = "AIzaSyD_JOjza3z3LGf24KbiXpPLkMiDkYTm27k12331242";
     public static final String VIDEO_URL = "https://www.youtube.com/watch?v=";
     private static final String APPLICATION_NAME = "API code samples";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
@@ -62,6 +64,45 @@ public class YoutubeService {
         
         for(SearchResult r : resultList){
             YoutubeVideo vid = new YoutubeVideo(YoutubeService.VIDEO_URL + r.getId().getVideoId(), 
+                    r.getSnippet().getTitle(), 
+                    r.getSnippet().getThumbnails().getDefault().getUrl(),
+                    r.getSnippet().getDescription());
+            vids.add(vid);
+        }
+        
+        //System.out.println(vids.toString());
+        
+        return vids;
+        
+        } catch (Exception e){
+            e.printStackTrace();
+            List<YoutubeVideo> emptyList = new ArrayList<>();
+            return emptyList;
+        }
+        
+    }
+    
+        public List<YoutubeVideo> popularVideos() throws GeneralSecurityException, IOException, GoogleJsonResponseException{
+        
+        try{        
+            YouTube youtubeService = getService();
+        // Define and execute the API request
+        YouTube.Videos.List request = youtubeService.videos()
+            .list("snippet,contentDetails,statistics");
+        VideoListResponse response = request.setKey(DEVELOPER_KEY)
+            .setMaxResults(25L)
+            .setChart("mostPopular")
+            .setRegionCode("US")
+            .execute();
+        System.out.println(response);
+        
+        
+        List<YoutubeVideo> vids = new ArrayList<>();
+        
+        List<Video> resultList = response.getItems();
+        
+        for(Video r : resultList){
+            YoutubeVideo vid = new YoutubeVideo(YoutubeService.VIDEO_URL + r.getId(), 
                     r.getSnippet().getTitle(), 
                     r.getSnippet().getThumbnails().getDefault().getUrl(),
                     r.getSnippet().getDescription());

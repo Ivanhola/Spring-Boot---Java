@@ -40,5 +40,13 @@ public class IndexController {
         return "videoSearched";
     }
     
+    @RequestMapping("/trending")
+    public String trendingVideos(Model model)
+    throws GeneralSecurityException, IOException, GoogleJsonResponseException{
+        
+        model.addAttribute("list",youtubeService.popularVideos());
+        return "popularVideos";
+    }
+    
     
 }
